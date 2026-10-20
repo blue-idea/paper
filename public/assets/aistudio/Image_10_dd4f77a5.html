@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Noto+Serif:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{width:6px;height:6px;}::-webkit-scrollbar-track{background:transparent;}::-webkit-scrollbar-thumb{background:#dec0bb;border-radius:4px;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-container":"#81672f","primary":"#952f25","surface-container-lowest":"#ffffff","secondary":"#33675f","on-error":"#ffffff","on-primary-fixed-variant":"#84241a","surface-container-highest":"#e6e2de","surface-container":"#f1edea","inverse-surface":"#31302e","inverse-on-surface":"#f4f0ec","outline-variant":"#dec0bb","secondary-fixed-dim":"#9cd1c7","background":"#fdf9f5","on-error-container":"#93000a","surface-tint":"#a43b2f","on-secondary":"#ffffff","on-surface":"#1c1b1a","surface-bright":"#fdf9f5","on-secondary-fixed":"#00201c","inverse-primary":"#ffb4a9","surface":"#fdf9f5","surface-container-low":"#f7f3ef","primary-fixed":"#ffdad5","on-surface-variant":"#57423f","on-primary":"#ffffff","on-primary-fixed":"#410001","on-tertiary-fixed-variant":"#5a430e","primary-container":"#b5473a","tertiary-fixed":"#ffdf9f","surface-container-high":"#ece7e4","tertiary":"#664f19","outline":"#8a716e","on-background":"#1c1b1a","on-tertiary":"#ffffff","secondary-container":"#b4eae0","on-secondary-container":"#386b63","primary-fixed-dim":"#ffb4a9","error":"#ba1a1a","on-tertiary-container":"#ffeac5","surface-dim":"#ddd9d6","on-primary-container":"#ffe7e4","on-tertiary-fixed":"#261a00","surface-variant":"#e6e2de","secondary-fixed":"#b7ede3","tertiary-fixed-dim":"#e3c281","error-container":"#ffdad6","on-secondary-fixed-variant":"#184f48"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-md":"1rem","gutter":"1rem","gutter-sidebar":"0.75rem","space-2xl":"4rem","margin-window":"0.75rem","margin":"2rem","space-xl":"2.5rem","space-2xs":"0.125rem","space-sm":"0.5rem","space-xs":"0.25rem","space-lg":"1.5rem"},fontFamily:{"label-ui-sm":["Inter"],"caption-marginalia":["Noto Serif"],"headline-lg":["Noto Serif"],"body-prose-lg":["Noto Serif"],"body-prose":["Noto Serif"],"display":["Noto Serif"],"headline-md":["Noto Serif"],"label-ui":["Inter"],"title-editorial":["Noto Serif"],"headline-sm":["Noto Serif"],"body-prose-sm":["Noto Serif"]},fontSize:{"label-ui-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"caption-marginalia":["12px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"400"}],"headline-lg":["28px",{"lineHeight":"38px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-prose-lg":["18px",{"lineHeight":"34px","letterSpacing":"0.01em","fontWeight":"400"}],"body-prose":["16px",{"lineHeight":"30px","letterSpacing":"0.005em","fontWeight":"400"}],"display":["38px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-md":["22px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"500"}],"label-ui":["13px",{"lineHeight":"18px","letterSpacing":"-0.005em","fontWeight":"450"}],"title-editorial":["16px",{"lineHeight":"24px","fontWeight":"500"}],"headline-sm":["18px",{"lineHeight":"26px","fontWeight":"500"}],"body-prose-sm":["14px",{"lineHeight":"24px","fontWeight":"400"}]}}}};</script></head><body class="bg-background font-body-prose text-on-surface antialiased select-none"><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container-low/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(43,42,40,0.04)] z-50 flex items-center justify-between px-margin-window select-none"><div class="flex items-center gap-space-sm"><div class="flex items-center gap-1.5 pl-space-xs pr-space-sm"><span class="w-3 h-3 rounded-full bg-[#FF5F56] inline-block shadow-inner"></span><span class="w-3 h-3 rounded-full bg-[#FFBD2E] inline-block shadow-inner"></span><span class="w-3 h-3 rounded-full bg-[#27C93F] inline-block shadow-inner"></span></div><div class="flex items-center gap-space-xs"><img alt="Paper Isle Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WgqI6FzYPlLiiQxCqKLyup8xtse2v6O_9hvUa5pDSzxzquNxzwop_J0_ppuNB2oBGIJYbwhKVL9j_Mk747-8DK8OU_w5uH_DXJe5HIdvYJi6-MK_wEaMpW5aeuzLjyRmdMgIRGu0KAighers1uHmfgHpAZNUod1G02D9GwAp8o62ozNshXaNSzhQrzePhKwszkbNk_dsXkN_NwwtNlhpem8qljqRz1gtwFY1qkp4VujCtqszMOWrfG0ag"/><span class="font-title-editorial text-title-editorial text-on-surface tracking-tight ml-space-2xs">纸屿 · Paper Isle</span></div><span class="font-caption-marginalia text-caption-marginalia text-outline px-space-xs">/</span><span class="font-title-editorial text-title-editorial text-primary tracking-normal">文房偏好设置与系统架构</span></div><div class="hidden xl:flex items-center gap-space-sm"><div class="flex items-center bg-surface-container px-space-xs py-space-2xs rounded-lg shadow-inner"><button class="px-space-sm py-space-2xs font-label-ui text-label-ui text-on-surface rounded hover:bg-surface-container-high transition-colors" type="button">写作模式</button><button class="px-space-sm py-space-2xs font-label-ui text-label-ui text-on-surface-variant hover:text-on-surface rounded hover:bg-surface-container-high transition-colors" type="button">专注模式</button><button class="px-space-sm py-space-2xs font-label-ui text-label-ui text-on-surface-variant hover:text-on-surface rounded hover:bg-surface-container-high transition-colors" type="button">禅道分屏</button></div><button class="flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container-high/60 rounded-lg hover:bg-surface-container-highest transition-colors font-label-ui text-label-ui text-on-surface-variant" type="button"><span class="material-symbols-outlined text-[16px]">search</span><span>⌘K 灵感指令</span></button></div><div class="flex items-center gap-space-sm"><div class="hidden md:flex items-center gap-space-xs text-on-surface-variant font-caption-marginalia text-caption-marginalia bg-surface-container/60 px-space-sm py-space-2xs rounded-full"><span class="w-1.5 h-1.5 rounded-full bg-secondary inline-block"></span><span>已同步至 iCloud 与 本地磁盘 · 实时就绪</span></div><button class="flex items-center gap-space-2xs px-space-xs py-space-2xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" title="8套文艺皮肤切换" type="button"><span class="material-symbols-outlined text-[18px]">palette</span><span class="font-label-ui-sm text-label-ui-sm hidden lg:inline">皮肤</span></button><button class="flex items-center gap-space-2xs px-space-xs py-space-2xs rounded-lg text-secondary hover:bg-secondary-container hover:text-on-secondary-container transition-colors" title="AI 伴读与灵感润色" type="button"><span class="material-symbols-outlined text-[18px]">auto_awesome</span><span class="font-label-ui-sm text-label-ui-sm hidden lg:inline">伴读</span></button><div class="flex items-center pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB20tTJiC4psikM-MXagOJMgx1xS2vZLsndI7KfbmEq9Nk5yjbTUBe6esJ8SS8pFyYCPNRDRio56maMPysmFF3DESGkp7-JS_a13KLd6bBESBrPS8XIkAnNZP9T8-OTVdSgDfSI574LWHM-5_QDxN0zmqVxK4QPfzlGU5GL3JtpoMSBtMaohCHr0Gh8IKoDHFSrqUrL89ksCaI3E1rl5JL7S1WIpzMmjX3VmtqI6CL8Cdezh7Sjy4HF"/></div></div></header><aside class="fixed left-0 top-16 bottom-10 w-64 bg-surface-container-low/75 backdrop-blur-xl z-40 flex flex-col justify-between py-space-md shadow-[1px_0_12px_rgba(43,42,40,0.02)]"><div class="flex flex-col gap-space-md px-gutter-sidebar"><div class="flex items-center justify-between px-space-sm"><span class="font-caption-marginalia text-caption-marginalia uppercase tracking-wider text-outline">文斋目录 · Binder</span><span class="material-symbols-outlined text-[16px] text-outline cursor-pointer hover:text-on-surface">tune</span></div><nav class="flex flex-col gap-space-2xs" data-active-classes="bg-primary-container text-on-primary font-medium shadow-sm"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="main-writing-studio" href="#"><span class="material-symbols-outlined text-[18px]">edit_note</span><span class="font-title-editorial text-title-editorial">书斋写作</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="ai-companion-review" href="#"><span class="material-symbols-outlined text-[18px]">auto_awesome</span><span class="font-title-editorial text-title-editorial">AI 灵感润色</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="knowledge-lore-research" href="#"><span class="material-symbols-outlined text-[18px]">style</span><span class="font-title-editorial text-title-editorial">资料卡片与图谱</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="literary-templates-workshop" href="#"><span class="material-symbols-outlined text-[18px]">auto_stories</span><span class="font-title-editorial text-title-editorial">文体模板工坊</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="one-click-publish-hub" href="#"><span class="material-symbols-outlined text-[18px]">send_time_extension</span><span class="font-title-editorial text-title-editorial">全网一键发布</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg transition-all bg-primary-container text-on-primary font-medium shadow-sm" data-path="studio-preferences-themes" href="#"><span class="material-symbols-outlined text-[18px]">settings</span><span class="font-title-editorial text-title-editorial">文房偏好设置</span></a></nav></div><div class="px-gutter-sidebar"><div class="bg-surface-container px-space-sm py-space-sm rounded-xl"><div class="flex items-center justify-between font-label-ui-sm text-label-ui-sm text-on-surface-variant mb-space-2xs"><span>今日笔耕</span><span>82%</span></div><div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-primary rounded-full" style="width: 82%"></div></div><div class="mt-space-2xs font-caption-marginalia text-caption-marginalia text-outline flex items-center justify-between"><span>已完成 2,855 字</span><span>目标 3,500</span></div></div></div></aside><div class="pl-64"><main class="relative pt-16 pb-10 min-h-screen w-full bg-background"><div class="flex flex-col w-full"><div class="max-w-7xl mx-auto w-full px-margin-window lg:px-margin pb-space-2xl pt-space-md"><!-- Top Breadcrumb & Actions Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-md border-b border-outline-variant/30 pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-caption-marginalia text-caption-marginalia text-outline tracking-wider">系统偏好 · MACOS NATIVE PREFERENCES</span>
+<span class="text-outline-variant font-caption-marginalia text-caption-marginalia">/</span>
+<span class="font-title-editorial text-title-editorial text-on-surface font-semibold">文房器物与交互中枢</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-space-2xs px-space-sm py-1 rounded-full bg-secondary-container/50 text-on-secondary-container font-label-ui-sm text-label-ui-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>所有配置即刻生效 (Auto-Persist)</span>
+</span>
+<button class="flex items-center gap-space-2xs px-space-sm py-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-ui-sm text-label-ui-sm transition-all border border-outline-variant/40" type="button">
+<span class="material-symbols-outlined text-[15px]">restart_alt</span>
+<span>恢复文房默认</span>
+</button>
+</div>
+</div>
+<!-- MODULE 1: 8 Literary Themes Bar (Refined & Compact Matrix) -->
+<section class="bg-surface-container-low border border-outline-variant/40 rounded-2xl p-space-md mb-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs mb-space-sm pb-space-xs border-b border-outline-variant/20">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">palette</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">文房八境 · 文人色域与纸韵皮肤</h2>
+<span class="font-caption-marginalia text-caption-marginalia text-outline px-2 py-0.5 rounded-full bg-surface-container">8 种文人雅调</span>
+</div>
+<div class="flex items-center gap-space-md text-on-surface-variant font-caption-marginalia text-caption-marginalia">
+<label class="flex items-center gap-1.5 cursor-pointer">
+<input checked="" class="w-3.5 h-3.5 rounded text-primary focus:ring-0 accent-primary" type="checkbox"/>
+<span>日照自动渐变「墨夜」</span>
+</label>
+<div class="flex items-center gap-1.5 pl-space-xs border-l border-outline-variant/40">
+<span class="text-outline">纸纹强度:</span>
+<input class="w-16 h-1 bg-surface-container-highest rounded appearance-none accent-primary cursor-pointer" max="100" min="0" type="range" value="45"/>
+<span class="text-[11px] font-mono text-outline">45%</span>
+</div>
+</div>
+</div>
+<!-- Compact 8 Swatch Chips Matrix -->
+<div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-space-xs">
+<!-- 01 宣纸 (Active) -->
+<div class="group relative p-2.5 rounded-xl bg-surface-container-lowest border-2 border-primary shadow-xs transition-all cursor-pointer flex flex-col justify-between h-[88px] overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex -space-x-1.5">
+<span class="w-4 h-4 rounded-full bg-[#F6F1E7] border border-black/10 inline-block shadow-xs"></span>
+<span class="w-4 h-4 rounded-full bg-[#B5473A] border border-white inline-block shadow-xs"></span>
+</div>
+<span class="w-4 h-4 rounded-full bg-primary/10 text-primary flex items-center justify-center font-caption-marginalia text-[9px] font-bold">印</span>
+</div>
+<div class="mt-1">
+<div class="flex items-center justify-between">
+<span class="font-title-editorial text-title-editorial text-on-surface font-semibold text-[13px] leading-tight">01 · 宣纸</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+<span class="font-caption-marginalia text-[10px] text-outline block truncate">朱砂印 · 柔和宣韵</span>
+</div>
+</div>
+<!-- 02 墨夜 -->
+<div class="group relative p-2.5 rounded-xl bg-[#1C1D21] border border-white/10 hover:border-white/30 transition-all cursor-pointer flex flex-col justify-between h-[88px] overflow-hidden text-white">
+<div class="flex items-center justify-between">
+<div class="flex -space-x-1.5">
+<span class="w-4 h-4 rounded-full bg-[#1C1D21] border border-white/30 inline-block"></span>
+<span class="w-4 h-4 rounded-full bg-[#C8A96A] border border-black inline-block"></span>
+</div>
+<span class="material-symbols-outlined text-[13px] text-tertiary-fixed">bedtime</span>
+</div>
+<div class="mt-1">
+<div class="flex items-center justify-between">
+<span class="font-title-editorial text-title-editorial text-[#FAF7F2] font-semibold text-[13px] leading-tight">02 · 墨夜</span>
+</div>
+<span class="font-caption-marginalia text-[10px] text-white/50 block truncate">暗金星火 · 秉烛</span>
+</div>
+</div>
+<!-- 03 青瓷 -->
+<div class="group relative p-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 hover:border-secondary transition-all cursor-pointer flex flex-col justify-between h-[88px] overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex -space-x-1.5">
+<span class="w-4 h-4 rounded-full bg-[#E8F0EC] border border-black/10 inline-block"></span>
+<span class="w-4 h-4 rounded-full bg-[#6FA39A] border border-white inline-block"></span>
+</div>
+<span class="material-symbols-outlined text-[13px] text-secondary">filter_vintage</span>
+</div>
+<div class="mt-1">
+<div class="flex items-center justify-between">
+<span class="font-title-editorial text-title-editorial text-on-surface font-semibold text-[13px] leading-tight">03 · 青瓷</span>
+</div>
+<span class="font-caption-marginalia text-[10px] text-outline block truncate">汝窑破云 · 冰裂</span>
+</div>
+</div>
+<!-- 04 远山 -->
+<div class="group relative p-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 hover:border-primary/50 transition-all cursor-pointer flex flex-col justify-between h-[88px] overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex -space-x-1.5">
+<span class="w-4 h-4 rounded-full bg-[#E9EDF2] border border-black/10 inline-block"></span>
+<span class="w-4 h-4 rounded-full bg-[#6B84A8] border border-white inline-block"></span>
+</div>
+<span class="material-symbols-outlined text-[13px] text-outline">terrain</span>
+</div>
+<div class="mt-1">
+<div class="flex items-center justify-between">
+<span class="font-title-editorial text-title-editorial text-on-surface font-semibold text-[13px] leading-tight">04 · 远山</span>
+</div>
+<span class="font-caption-marginalia text-[10px] text-outline block truncate">水墨空濛 · 霁蓝</span>
+</div>
+</div>
+<!-- 05 桃夭 -->
+<div class="group relative p-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 hover:border-primary/50 transition-all cursor-pointer flex flex-col justify-between h-[88px] overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex -space-x-1.5">
+<span class="w-4 h-4 rounded-full bg-[#FBEFEF] border border-black/10 inline-block"></span>
+<span class="w-4 h-4 rounded-full bg-[#D98A96] border border-white inline-block"></span>
+</div>
+<span class="material-symbols-outlined text-[13px] text-primary">local_florist</span>
+</div>
+<div class="mt-1">
+<div class="flex items-center justify-between">
+<span class="font-title-editorial text-title-editorial text-on-surface font-semibold text-[13px] leading-tight">05 · 桃夭</span>
+</div>
+<span class="font-caption-marginalia text-[10px] text-outline block truncate">诗经浅醉 · 瓣落</span>
+</div>
+</div>
+<!-- 06 松烟 -->
+<div class="group relative p-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 hover:border-secondary transition-all cursor-pointer flex flex-col justify-between h-[88px] overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex -space-x-1.5">
+<span class="w-4 h-4 rounded-full bg-[#E6EAE0] border border-black/10 inline-block"></span>
+<span class="w-4 h-4 rounded-full bg-[#7C9068] border border-white inline-block"></span>
+</div>
+<span class="material-symbols-outlined text-[13px] text-secondary">forest</span>
+</div>
+<div class="mt-1">
+<div class="flex items-center justify-between">
+<span class="font-title-editorial text-title-editorial text-on-surface font-semibold text-[13px] leading-tight">06 · 松烟</span>
+</div>
+<span class="font-caption-marginalia text-[10px] text-outline block truncate">黄山古黛 · 雨后</span>
+</div>
+</div>
+<!-- 07 琥珀 -->
+<div class="group relative p-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 hover:border-tertiary transition-all cursor-pointer flex flex-col justify-between h-[88px] overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex -space-x-1.5">
+<span class="w-4 h-4 rounded-full bg-[#F3E6D0] border border-black/10 inline-block"></span>
+<span class="w-4 h-4 rounded-full bg-[#B8803F] border border-white inline-block"></span>
+</div>
+<span class="material-symbols-outlined text-[13px] text-tertiary">import_contacts</span>
+</div>
+<div class="mt-1">
+<div class="flex items-center justify-between">
+<span class="font-title-editorial text-title-editorial text-on-surface font-semibold text-[13px] leading-tight">07 · 琥珀</span>
+</div>
+<span class="font-caption-marginalia text-[10px] text-outline block truncate">藏书皮卷 · 赭黄</span>
+</div>
+</div>
+<!-- 08 薄暮 -->
+<div class="group relative p-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 hover:border-primary/50 transition-all cursor-pointer flex flex-col justify-between h-[88px] overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex -space-x-1.5">
+<span class="w-4 h-4 rounded-full bg-[#ECE8F1] border border-black/10 inline-block"></span>
+<span class="w-4 h-4 rounded-full bg-[#9A88B8] border border-white inline-block"></span>
+</div>
+<span class="material-symbols-outlined text-[13px] text-outline">wb_twilight</span>
+</div>
+<div class="mt-1">
+<div class="flex items-center justify-between">
+<span class="font-title-editorial text-title-editorial text-on-surface font-semibold text-[13px] leading-tight">08 · 薄暮</span>
+</div>
+<span class="font-caption-marginalia text-[10px] text-outline block truncate">黛紫残霞 · 静思</span>
+</div>
+</div>
+</div>
+</section>
+<!-- MODULE 2: Typography & Proof Sheet Split Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-xl">
+<!-- Left: Typography Precision Workshop (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-low border border-outline-variant/40 p-space-lg rounded-2xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-xs mb-space-sm border-b border-outline-variant/20">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">format_size</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">字体与排版深度工坊</h2>
+</div>
+<span class="font-caption-marginalia text-caption-marginalia text-outline">中文字体微排版规范</span>
+</div>
+<!-- Font Family Selector Chips -->
+<div class="mb-space-md">
+<div class="flex items-center justify-between mb-space-2xs">
+<label class="font-label-ui-sm text-label-ui-sm text-outline uppercase tracking-wider">正文精选字库 (Prose Typeface)</label>
+<span class="font-caption-marginalia text-caption-marginalia text-primary font-medium">当前应用：思源宋体</span>
+</div>
+<div class="grid grid-cols-3 sm:grid-cols-6 gap-space-2xs">
+<button class="px-space-xs py-2 rounded-lg bg-surface-container-lowest text-primary ring-1 ring-primary/80 text-center shadow-xs flex flex-col items-center" type="button">
+<span class="font-title-editorial text-[13px] font-semibold">思源宋体</span>
+<span class="text-[9px] text-outline mt-0.5">默认文人衬线</span>
+</button>
+<button class="px-space-xs py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface text-center flex flex-col items-center transition-colors" type="button">
+<span class="font-title-editorial text-[13px]">霞鹜文楷</span>
+<span class="text-[9px] text-secondary mt-0.5">温润手写体</span>
+</button>
+<button class="px-space-xs py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface text-center flex flex-col items-center transition-colors" type="button">
+<span class="font-title-editorial text-[13px]">方正楷体</span>
+<span class="text-[9px] text-outline mt-0.5">古籍劲挺拓本</span>
+</button>
+<button class="px-space-xs py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface text-center flex flex-col items-center transition-colors" type="button">
+<span class="font-title-editorial text-[13px]">New York</span>
+<span class="text-[9px] text-tertiary mt-0.5">Apple 西文</span>
+</button>
+<button class="px-space-xs py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface text-center flex flex-col items-center transition-colors" type="button">
+<span class="font-title-editorial text-[13px]">Georgia</span>
+<span class="text-[9px] text-outline mt-0.5">屏显可读衬线</span>
+</button>
+<button class="px-space-xs py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface text-center flex flex-col items-center transition-colors" type="button">
+<span class="font-title-editorial text-[13px]">思源黑体</span>
+<span class="text-[9px] text-outline mt-0.5">现代非衬线</span>
+</button>
+</div>
+</div>
+<!-- Sliders Grid (2 Columns) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-space-md gap-y-space-sm mb-space-md">
+<!-- 1. Font Size -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-ui text-label-ui">
+<span class="text-on-surface flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-outline">text_fields</span>正文字号</span>
+<span class="font-mono text-primary font-semibold text-[13px]">18 px</span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="26" min="14" type="range" value="18"/>
+<div class="flex justify-between font-caption-marginalia text-[10px] text-outline">
+<span>14px 精致</span>
+<span>18px 适眼推荐</span>
+<span>26px 朗读适老</span>
+</div>
+</div>
+<!-- 2. Font Weight -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-ui text-label-ui">
+<span class="text-on-surface flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-outline">format_bold</span>正文字重</span>
+<span class="font-mono text-primary font-semibold text-[13px]">常规 400</span>
+</div>
+<div class="grid grid-cols-3 gap-1 bg-surface-container p-0.5 rounded-lg">
+<button class="py-1 text-center font-label-ui-sm text-label-ui-sm bg-surface-container-lowest text-primary rounded shadow-xs" type="button">400 常规</button>
+<button class="py-1 text-center font-label-ui-sm text-label-ui-sm text-on-surface-variant hover:text-on-surface rounded" type="button">500 中粗</button>
+<button class="py-1 text-center font-label-ui-sm text-label-ui-sm text-on-surface-variant hover:text-on-surface rounded" type="button">600 粗体</button>
+</div>
+</div>
+<!-- 3. Line Height -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-ui text-label-ui">
+<span class="text-on-surface flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-outline">format_line_spacing</span>行距倍率</span>
+<span class="font-mono text-primary font-semibold text-[13px]">1.85 ×</span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="240" min="140" type="range" value="185"/>
+<div class="flex justify-between font-caption-marginalia text-[10px] text-outline">
+<span>1.4x 紧凑</span>
+<span>1.85x 黄金呼吸</span>
+<span>2.4x 禅卷</span>
+</div>
+</div>
+<!-- 4. Paragraph Spacing -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-ui text-label-ui">
+<span class="text-on-surface flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-outline">density_medium</span>段间距留白</span>
+<span class="font-mono text-primary font-semibold text-[13px]">12 px</span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="24" min="0" type="range" value="12"/>
+<div class="flex justify-between font-caption-marginalia text-[10px] text-outline">
+<span>0px 紧挨</span>
+<span>12px 传统散步</span>
+<span>24px 宽幅空行</span>
+</div>
+</div>
+<!-- 5. Sheet Width -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-ui text-label-ui">
+<span class="text-on-surface flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-outline">view_column</span>版面宽度 (稿纸行宽)</span>
+<span class="font-mono text-primary font-semibold text-[13px]">680 px</span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="900" min="520" type="range" value="680"/>
+<div class="flex justify-between font-caption-marginalia text-[10px] text-outline">
+<span>520px 短调</span>
+<span>680px 散文小说</span>
+<span>900px 巨幅</span>
+</div>
+</div>
+<!-- 6. Letter Spacing -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-ui text-label-ui">
+<span class="text-on-surface flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-outline">space_bar</span>字间微距</span>
+<span class="font-mono text-primary font-semibold text-[13px]">0.5 px</span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="30" min="0" type="range" value="5"/>
+<div class="flex justify-between font-caption-marginalia text-[10px] text-outline">
+<span>0 默认字谷</span>
+<span>0.5px 轻微舒展</span>
+<span>3.0px 疏朗</span>
+</div>
+</div>
+</div>
+<!-- Advanced Typographic Switches -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs border-t border-outline-variant/30">
+<div class="p-space-sm bg-surface-container rounded-xl flex items-center justify-between">
+<div>
+<span class="font-title-editorial text-[13px] text-on-surface block font-medium">段首缩进 (2字符)</span>
+<span class="font-caption-marginalia text-[11px] text-outline">中国传统公案典籍版式</span>
+</div>
+<div class="flex items-center bg-surface-container-highest rounded p-0.5 font-label-ui-sm text-label-ui-sm">
+<button class="px-space-xs py-1 bg-primary text-on-primary rounded shadow-xs" type="button">开启两空格</button>
+<button class="px-space-xs py-1 text-on-surface-variant hover:text-on-surface" type="button">顶格</button>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container rounded-xl flex items-center justify-between">
+<div>
+<span class="font-title-editorial text-[13px] text-on-surface block font-medium">盘古之白 (Pangu)</span>
+<span class="font-caption-marginalia text-[11px] text-outline">中英文与数字间自动增加微间隙</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-8 h-4 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Live Typography Proof Sheet (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-caption-marginalia text-caption-marginalia uppercase text-outline tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">auto_stories</span>
+即时版面镜览 · Live Proof Sheet
+</span>
+<span class="font-label-ui-sm text-label-ui-sm text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+思源宋体 · 18px · 1.85x
+</span>
+</div>
+<!-- Proof Paper Simulator Frame -->
+<div class="relative bg-[#FAF7F2] text-[#2B2A28] rounded-2xl p-space-md lg:p-space-lg shadow-sm border border-[#E5DDCB] flex-1 flex flex-col justify-between overflow-hidden min-h-[380px]">
+<!-- Paper Texture Grain Overlay -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:14px_14px]"></div>
+<!-- Page Header Marginalia -->
+<div class="flex items-center justify-between pb-space-xs border-b border-[#dec0bb]/40">
+<span class="font-caption-marginalia text-[11px] text-[#8a716e] italic">《南山纪事》 卷三 · 浮生随笔</span>
+<div class="flex items-center gap-2">
+<span class="font-mono text-[10px] text-[#dec0bb]">680px RULER</span>
+<span class="font-caption-marginalia text-[10px] text-[#8a716e] tracking-widest uppercase">PAGE 142</span>
+</div>
+</div>
+<!-- Manuscript Sample Content -->
+<div class="py-space-sm flex flex-col gap-space-sm">
+<h3 class="font-headline-sm text-[18px] text-[#1c1b1a] tracking-tight font-medium">
+林泉深处，煮石烹茶
+</h3>
+<p class="font-body-prose text-[16px] text-[#2B2A28] indent-[2em] leading-[1.85] text-justify tracking-[0.5px]">
+近午时分，山色忽转黛青。石阶旁古槐落花如细雪，积于苔衣之上。余取竹勺试泉，水声琤琤然如玉碎，遂就松火瀹新茶。
+</p>
+<!-- Marginalia Note Widget -->
+<div class="my-space-2xs p-space-xs bg-[#F1EDEA]/80 rounded-lg border-l-2 border-[#952f25] text-[#57423f] flex flex-col gap-0.5">
+<div class="flex items-center gap-space-xs text-[#952f25] font-caption-marginalia text-[11px] font-semibold">
+<span class="material-symbols-outlined text-[13px]">border_color</span>
+<span>朱砂墨批注</span>
+</div>
+<p class="font-caption-marginalia text-[11px] leading-relaxed">
+明代陆树声《茶寮记》云：“煎茶非漫浪，要须其人与水、火、器具交相合。” 此处意象纯正。
+</p>
+</div>
+<p class="font-body-prose text-[16px] text-[#2B2A28] indent-[2em] leading-[1.85] text-justify tracking-[0.5px]">
+坐久案前，顿觉清风生两腋，人间喧嚣尽归尘土。笔墨随呼吸舒展，万物静观皆自得。
+</p>
+</div>
+<!-- Proof Bottom Status & Seal -->
+<div class="flex items-center justify-between pt-space-xs border-t border-[#dec0bb]/30 font-caption-marginalia text-[11px] text-[#8a716e]">
+<div class="flex items-center gap-2">
+<span>字数: 3,482</span>
+<span>·</span>
+<span>单行 38 汉字</span>
+</div>
+<div class="w-6 h-6 rounded border border-[#952f25]/60 bg-[#952f25]/10 flex items-center justify-center text-[#952f25] font-serif text-[10px] font-bold shadow-2xs">
+纸屿
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- MODULE 3 & MODULE 4: AI Engines + Keyboard Accelerators (Side-by-Side 2 Cols) -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg mb-space-xl">
+<!-- MODULE 3: AI Engine & Models Setup -->
+<div class="bg-surface-container-low border border-outline-variant/40 p-space-lg rounded-2xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-xs mb-space-sm border-b border-outline-variant/20">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">psychology</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">AI 侍书与模型中枢 (AI Engine)</h2>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-secondary/15 text-secondary font-label-ui-sm text-label-ui-sm">双模热备</span>
+</div>
+<p class="font-body-prose-sm text-body-prose-sm text-on-surface-variant mb-space-md">
+支持本地 Ollama 零隐私泄漏推理，或调用云端高阶模型进行文体润色与长篇伏笔排查。
+</p>
+<!-- Form Group for AI Settings -->
+<div class="flex flex-col gap-space-sm">
+<!-- 1. API Base URL -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<label class="font-label-ui-sm text-label-ui-sm text-outline">API Base URL (服务接口地址)</label>
+<span class="font-mono text-[10px] text-outline">支持官方或本地反代端口</span>
+</div>
+<div class="relative flex items-center">
+<input class="w-full bg-surface-container rounded-lg border border-outline-variant/40 py-1.5 px-space-sm text-on-surface font-mono text-[12px] focus:ring-1 focus:ring-primary focus:border-primary outline-none" type="text" value="https://api.anthropic.com/v1"/>
+<span class="absolute right-2 px-1.5 py-0.5 rounded bg-surface-container-highest text-outline text-[10px] font-mono">POST</span>
+</div>
+</div>
+<!-- 2. Model Preset Selector -->
+<div class="flex flex-col gap-1">
+<label class="font-label-ui-sm text-label-ui-sm text-outline">模型选择与预设 (Model Identifier)</label>
+<select class="w-full bg-surface-container rounded-lg border border-outline-variant/40 py-1.5 px-space-sm text-on-surface font-label-ui text-label-ui focus:ring-1 focus:ring-primary focus:border-primary outline-none cursor-pointer">
+<option selected="">Claude 3.5 Sonnet (推荐 · 文风典雅与百万长文推理)</option>
+<option>DeepSeek V3 / R1 (超强逻辑推理与文法稽考)</option>
+<option>GPT-4o (全能通用 · 典故知识图谱)</option>
+<option>本地 Ollama · Qwen2.5-7B-Literary (完全离线 · 零数据上传)</option>
+<option>本地 Ollama · Qwen2.5-14B (本地高阶文采特调版)</option>
+</select>
+</div>
+<!-- 3. API Key & Ping Connectivity Test -->
+<div class="flex flex-col gap-1">
+<label class="font-label-ui-sm text-label-ui-sm text-outline">API Key 授权凭证</label>
+<div class="flex items-center gap-space-xs">
+<div class="relative flex-1 flex items-center">
+<input class="w-full bg-surface-container rounded-lg border border-outline-variant/40 py-1.5 px-space-sm pr-9 text-on-surface font-mono text-[12px] focus:ring-1 focus:ring-primary focus:border-primary outline-none" type="password" value="sk-ant-api03-paperisle-literary-priv-key-99824"/>
+<button class="absolute right-2 text-outline hover:text-on-surface" title="显示/隐藏密钥" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+</div>
+<button class="flex items-center gap-1 px-space-sm py-1.5 rounded-lg bg-surface-container-highest hover:bg-surface-container-high border border-outline-variant/40 text-on-surface font-label-ui-sm text-label-ui-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[15px] text-secondary">wifi_tethering</span>
+<span>测试连接</span>
+</button>
+<span class="inline-flex items-center gap-1 px-2 py-1 rounded bg-secondary/10 text-secondary text-[11px] font-mono whitespace-nowrap">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+24ms 正常
+</span>
+</div>
+</div>
+<!-- 4. Personality & Prompt Preference -->
+<div class="flex flex-col gap-1">
+<label class="font-label-ui-sm text-label-ui-sm text-outline">侍读风格偏好 (Prompt Persona)</label>
+<div class="grid grid-cols-3 gap-space-xs">
+<label class="flex items-center gap-1.5 p-2 rounded-lg bg-surface-container-lowest border border-primary/60 cursor-pointer">
+<input checked="" class="accent-primary" name="persona" type="radio"/>
+<span class="font-title-editorial text-[12px] font-medium text-primary">山中隐士 (清雅古风)</span>
+</label>
+<label class="flex items-center gap-1.5 p-2 rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 cursor-pointer">
+<input class="accent-primary" name="persona" type="radio"/>
+<span class="font-title-editorial text-[12px] text-on-surface">现代洗练 (精简干脆)</span>
+</label>
+<label class="flex items-center gap-1.5 p-2 rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 cursor-pointer">
+<input class="accent-primary" name="persona" type="radio"/>
+<span class="font-title-editorial text-[12px] text-on-surface">考据学者 (严查错漏)</span>
+</label>
+</div>
+</div>
+<!-- 5. Temperature & Context Window Sliders -->
+<div class="grid grid-cols-2 gap-space-md pt-space-xs">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-ui text-label-ui">
+<span class="text-outline text-[12px]">温润度 (Temperature)</span>
+<span class="font-mono text-primary text-[12px]">0.65</span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="100" min="0" type="range" value="65"/>
+<div class="flex justify-between font-caption-marginalia text-[9px] text-outline">
+<span>严谨 0.1</span>
+<span>文采 0.7</span>
+<span>跳脱 1.0</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-ui text-label-ui">
+<span class="text-outline text-[12px]">附带上下文篇幅</span>
+<span class="font-mono text-primary text-[12px]">前 3 章回</span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="10" min="1" type="range" value="3"/>
+<div class="flex justify-between font-caption-marginalia text-[9px] text-outline">
+<span>当前段落</span>
+<span>前 3 回</span>
+<span>全卷 10 万字</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-sm mt-space-sm border-t border-outline-variant/20 flex items-center justify-between font-caption-marginalia text-caption-marginalia text-outline">
+<span>* AI 作为边注批改，绝不直接擅改覆写正文一字一句。</span>
+<span class="text-primary hover:underline cursor-pointer">管理自定 Prompt 库 →</span>
+</div>
+</div>
+<!-- MODULE 4: Key Bindings & Accelerators (macOS Native Shortcuts Table) -->
+<div class="bg-surface-container-low border border-outline-variant/40 p-space-lg rounded-2xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-xs mb-space-sm border-b border-outline-variant/20">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">keyboard</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">快捷键与效率指令 (Key Bindings)</h2>
+</div>
+<button class="px-space-xs py-0.5 rounded bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 text-outline hover:text-on-surface font-label-ui-sm text-label-ui-sm transition-colors" type="button">
+恢复 macOS 默认
+</button>
+</div>
+<p class="font-body-prose-sm text-body-prose-sm text-on-surface-variant mb-space-md">
+深度适配 macOS 标准键盘修饰符（⌘ Cmd / ⌥ Option / ⇧ Shift），支持自定义绑定与冲突检测。
+</p>
+<!-- Structured macOS Shortcut List -->
+<div class="flex flex-col gap-space-2xs">
+<!-- Row 1 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline text-[16px]">edit_note</span>
+<span class="font-label-ui text-label-ui text-on-surface">唤出灵感侍书 / ⌘K 指令面板</span>
+</div>
+<div class="flex items-center gap-1 font-mono">
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest border border-outline-variant/40 text-on-surface text-[11px] shadow-2xs font-semibold">⌘</kbd>
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest border border-outline-variant/40 text-on-surface text-[11px] shadow-2xs font-semibold">K</kbd>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline text-[16px]">auto_awesome</span>
+<span class="font-label-ui text-label-ui text-on-surface">选中文字进行智能文风润色</span>
+</div>
+<div class="flex items-center gap-1 font-mono">
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest border border-outline-variant/40 text-on-surface text-[11px] shadow-2xs font-semibold">⌘</kbd>
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest border border-outline-variant/40 text-on-surface text-[11px] shadow-2xs font-semibold">J</kbd>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline text-[16px]">save</span>
+<span class="font-label-ui text-label-ui text-on-surface">立即保存并生成时间机器快照</span>
+</div>
+<div class="flex items-center gap-1 font-mono">
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest border border-outline-variant/40 text-on-surface text-[11px] shadow-2xs font-semibold">⌘</kbd>
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest border border-outline-variant/40 text-on-surface text-[11px] shadow-2xs font-semibold">S</kbd>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline text-[16px]">fullscreen</span>
+<span class="font-label-ui text-label-ui text-on-surface">全屏专注沉浸模式 (禅道)</span>
+</div>
+<div class="flex items-center gap-1 font-mono">
+<kbd class="px-2 py-0.5 rounded bg-surface-container-lowest border border-outline-variant/40 text-on-surface text-[11px] shadow-2xs font-semibold">F11</kbd>
+</div>
+</div>
+<!-- Row 5 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline text-[16px]">vertical_align_center</span>
+<span class="font-label-ui text-label-ui text-on-surface">打字机居中滚动模式切换</span>
+</div>
+<div class="flex items-center gap-1 font-mono">
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest border border-outline-variant/40 text-on-surface text-[11px] shadow-2xs font-semibold">⌘</kbd>
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest border border-outline-variant/40 text-on-surface text-[11px] shadow-2xs font-semibold">⌥</kbd>
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest border border-outline-variant/40 text-on-surface text-[11px] shadow-2xs font-semibold">T</kbd>
+</div>
+</div>
+<!-- Row 6 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline text-[16px]">format_bold</span>
+<span class="font-label-ui text-label-ui text-on-surface">文本加粗 / 斜体格式化</span>
+</div>
+<div class="flex items-center gap-2 font-mono">
+<div class="flex items-center gap-0.5">
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest border border-outline-variant/40 text-on-surface text-[11px] shadow-2xs">⌘B</kbd>
+</div>
+<span class="text-outline">/</span>
+<div class="flex items-center gap-0.5">
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest border border-outline-variant/40 text-on-surface text-[11px] shadow-2xs">⌘I</kbd>
+</div>
+</div>
+</div>
+<!-- Row 7 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline text-[16px]">dock_to_left</span>
+<span class="font-label-ui text-label-ui text-on-surface">折叠 / 展开左侧书卷目录 (Binder)</span>
+</div>
+<div class="flex items-center gap-1 font-mono">
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest border border-outline-variant/40 text-on-surface text-[11px] shadow-2xs font-semibold">⌘</kbd>
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest border border-outline-variant/40 text-on-surface text-[11px] shadow-2xs font-semibold">\</kbd>
+</div>
+</div>
+<!-- Row 8 -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline text-[16px]">send_time_extension</span>
+<span class="font-label-ui text-label-ui text-on-surface">打开全网发布排版中心</span>
+</div>
+<div class="flex items-center gap-1 font-mono">
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest border border-outline-variant/40 text-on-surface text-[11px] shadow-2xs font-semibold">⌘</kbd>
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest border border-outline-variant/40 text-on-surface text-[11px] shadow-2xs font-semibold">⇧</kbd>
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-lowest border border-outline-variant/40 text-on-surface text-[11px] shadow-2xs font-semibold">P</kbd>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-sm mt-space-sm border-t border-outline-variant/20 flex items-center justify-between font-caption-marginalia text-caption-marginalia text-outline">
+<span class="flex items-center gap-1 text-secondary"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 快捷键冲突排查：未发现冲突</span>
+<span class="text-primary hover:underline cursor-pointer">导出快捷键 Cheatsheet PDF</span>
+</div>
+</div>
+</section>
+<!-- MODULE 5: Storage & Multi-Device Syncing Section -->
+<section class="bg-surface-container-low border border-outline-variant/40 p-space-lg rounded-2xl shadow-sm mb-space-2xl">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs pb-space-xs mb-space-md border-b border-outline-variant/20">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[24px]">cloud_sync</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">文房存续与云端多端同步 (Storage &amp; Sync)</h2>
+<p class="font-caption-marginalia text-caption-marginalia text-on-surface-variant">
+纸屿恪守作者数据自主权：纯净 Markdown 离线磁盘直存，拒绝专有格式锁定。
+</p>
+</div>
+</div>
+<button class="flex items-center gap-1 px-space-md py-1.5 rounded-lg bg-secondary text-on-secondary font-label-ui-sm text-label-ui-sm shadow-xs hover:bg-secondary/90 transition-all self-start sm:self-auto" type="button">
+<span class="material-symbols-outlined text-[15px]">sync</span>
+<span>立即触发双向同步</span>
+</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+<!-- Local Storage & Time Machine -->
+<div class="flex flex-col gap-space-sm">
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">folder</span>
+本地存储库与墨墨时间机器
+</h3>
+<!-- Local Path Card -->
+<div class="p-space-sm bg-surface-container rounded-xl flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-ui-sm text-label-ui-sm text-outline">当前书斋本地存储目录</span>
+<span class="px-1.5 py-0.5 rounded bg-secondary/15 text-secondary text-[10px] font-mono">标准 Markdown + FrontMatter</span>
+</div>
+<div class="flex items-center gap-2">
+<input class="w-full bg-surface-container-lowest font-mono text-[11px] text-on-surface py-1.5 px-space-xs rounded-lg border border-outline-variant/40 outline-none" readonly="" type="text" value="/Users/yubai/Documents/PaperIsle/SouthMountain/"/>
+</div>
+<div class="flex items-center justify-end gap-space-xs pt-1">
+<button class="px-space-xs py-1 rounded bg-surface-container-highest hover:bg-surface-container-high text-on-surface text-[12px] font-label-ui-sm transition-colors border border-outline-variant/30" type="button">
+在 Finder 中显示
+</button>
+<button class="px-space-xs py-1 rounded bg-surface-container-highest hover:bg-surface-container-high text-on-surface text-[12px] font-label-ui-sm transition-colors border border-outline-variant/30" type="button">
+更改本地目录...
+</button>
+</div>
+</div>
+<!-- Time Machine Configuration -->
+<div class="p-space-sm bg-surface-container rounded-xl flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px]">history_toggle_off</span>
+<span class="font-title-editorial text-[13px] text-on-surface font-medium">墨墨时间机器 (增量版本快照)</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-8 h-4 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<p class="font-caption-marginalia text-[11px] text-outline">
+本地 SQLite 自动记录每一次重大段落重构与修订，支持按回目随时回滚。
+</p>
+<div class="grid grid-cols-2 gap-2 pt-1 font-label-ui-sm text-label-ui-sm">
+<div>
+<span class="text-outline text-[11px] block">自动快照频率</span>
+<select class="w-full mt-1 bg-surface-container-lowest border border-outline-variant/40 rounded py-1 px-1.5 text-on-surface outline-none">
+<option selected="">每 5 分钟增量生成</option>
+<option>每 15 分钟</option>
+<option>仅在手动 ⌘S 时</option>
+</select>
+</div>
+<div>
+<span class="text-outline text-[11px] block">保留版本上限</span>
+<select class="w-full mt-1 bg-surface-container-lowest border border-outline-variant/40 rounded py-1 px-1.5 text-on-surface outline-none">
+<option selected="">保留最近 100 个快照 (约15MB)</option>
+<option>保留最近 30 天快照</option>
+<option>无上限永久保存</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<!-- Cloud Sync & End-to-End Encryption -->
+<div class="flex flex-col gap-space-sm">
+<h3 class="font-title-editorial text-title-editorial text-on-surface font-semibold flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">cloud</span>
+云端管道与端到端加密 (Sync &amp; E2EE)
+</h3>
+<!-- iCloud Container Switch -->
+<div class="p-space-sm bg-surface-container rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-xs">
+<span class="material-symbols-outlined text-[20px]">cloud_done</span>
+</div>
+<div>
+<span class="font-title-editorial text-[13px] text-on-surface font-medium block">Apple iCloud Drive 同步通道</span>
+<span class="font-caption-marginalia text-[11px] text-outline">支持 macOS / iOS 原生后台无缝接力 (Handoff)</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 font-label-ui-sm text-label-ui-sm text-secondary font-medium px-2 py-1 rounded bg-secondary/10">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+已连接 (E2EE 开启)
+</span>
+</div>
+<!-- WebDAV / Custom Cloud NAS Settings -->
+<div class="p-space-sm bg-surface-container rounded-xl flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">dns</span>
+<span class="font-title-editorial text-[13px] text-on-surface font-medium">第三方 WebDAV / 坚果云 / 自建 NAS</span>
+</div>
+<span class="text-[11px] font-caption-marginalia text-outline">备用灾备同步</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1 font-label-ui-sm text-label-ui-sm">
+<div class="sm:col-span-2">
+<span class="text-outline text-[11px] block">WebDAV 服务器 URL</span>
+<input class="w-full mt-1 bg-surface-container-lowest border border-outline-variant/40 rounded py-1 px-2 font-mono text-[11px] text-on-surface outline-none" placeholder="https://dav.jianguoyun.com/dav/PaperIsle/" type="text" value="https://dav.jianguoyun.com/dav/PaperIsle/"/>
+</div>
+<div>
+<span class="text-outline text-[11px] block">账号</span>
+<input class="w-full mt-1 bg-surface-container-lowest border border-outline-variant/40 rounded py-1 px-2 font-mono text-[11px] text-on-surface outline-none" type="text" value="author_yubai"/>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-caption-marginalia text-[11px] text-outline">离线策略：断网优先写入本地，联网时无损合并</span>
+<button class="px-space-xs py-1 rounded bg-surface-container-highest hover:bg-surface-container-high text-on-surface text-[12px] font-label-ui-sm transition-colors border border-outline-variant/30" type="button">
+校验 WebDAV 连通性
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final Decorative Literati Seal Footer Banner -->
+<div class="pt-space-sm pb-space-lg flex flex-col items-center justify-center text-center gap-space-2xs">
+<div class="w-7 h-7 rounded border border-[#952f25]/40 bg-[#952f25]/5 flex items-center justify-center text-primary font-caption-marginalia text-[12px] shadow-2xs font-semibold">
+屿
+</div>
+<p class="font-caption-marginalia text-[11px] text-outline tracking-widest uppercase">
+纸屿 · PAPER ISLE STUDIO ENGINE V3.4.2 · CRAFTED FOR AUTHORS
+</p>
+<p class="font-caption-marginalia text-[10px] text-outline/80">
+让技术隐于纸墨之后，唯留思绪与千古文章
+</p>
+</div>
+</div>
+</div></main></div><footer class="fixed bottom-0 left-0 right-0 h-10 bg-surface-container-low/90 backdrop-blur-xl shadow-[0_-1px_6px_rgba(43,42,40,0.03)] z-50 flex items-center justify-between px-space-md font-label-ui-sm text-label-ui-sm text-on-surface-variant select-none"><div class="flex items-center gap-space-md"><span class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px] text-primary">ink_pen</span>实时字数: 3,482 字</span><span class="text-outline">|</span><span>预估阅读: 9 分钟</span><span class="text-outline">|</span><span class="flex items-center gap-space-2xs"><span class="w-2 h-2 rounded-full bg-secondary inline-block"></span>今日目标: 82% 环形进度</span></div><div class="hidden md:flex items-center gap-space-xs text-outline"><span class="material-symbols-outlined text-[14px]">format_size</span><span>当前版式: 思源宋体 18px · 行距 1.85x · 版宽 680px · 宣纸微纹</span></div><div class="flex items-center gap-space-md"><span>打字机模式 [开]</span><span class="text-outline">|</span><span>专注模式 (F11)</span><span class="text-outline">|</span><span class="text-secondary flex items-center gap-space-2xs"><span class="material-symbols-outlined text-[14px]">verified</span>自动保存与快照正常</span></div></footer></body></html>

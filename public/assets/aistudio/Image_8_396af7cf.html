@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Noto+Serif:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-container":"#81672f","primary":"#952f25","surface-container-lowest":"#ffffff","secondary":"#33675f","on-error":"#ffffff","on-primary-fixed-variant":"#84241a","surface-container-highest":"#e6e2de","surface-container":"#f1edea","inverse-surface":"#31302e","inverse-on-surface":"#f4f0ec","outline-variant":"#dec0bb","secondary-fixed-dim":"#9cd1c7","background":"#fdf9f5","on-error-container":"#93000a","surface-tint":"#a43b2f","on-secondary":"#ffffff","on-surface":"#1c1b1a","surface-bright":"#fdf9f5","on-secondary-fixed":"#00201c","inverse-primary":"#ffb4a9","surface":"#fdf9f5","surface-container-low":"#f7f3ef","primary-fixed":"#ffdad5","on-surface-variant":"#57423f","on-primary":"#ffffff","on-primary-fixed":"#410001","on-tertiary-fixed-variant":"#5a430e","primary-container":"#b5473a","tertiary-fixed":"#ffdf9f","surface-container-high":"#ece7e4","tertiary":"#664f19","outline":"#8a716e","on-background":"#1c1b1a","on-tertiary":"#ffffff","secondary-container":"#b4eae0","on-secondary-container":"#386b63","primary-fixed-dim":"#ffb4a9","error":"#ba1a1a","on-tertiary-container":"#ffeac5","surface-dim":"#ddd9d6","on-primary-container":"#ffe7e4","on-tertiary-fixed":"#261a00","surface-variant":"#e6e2de","secondary-fixed":"#b7ede3","tertiary-fixed-dim":"#e3c281","error-container":"#ffdad6","on-secondary-fixed-variant":"#184f48"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-md":"1rem","gutter":"1rem","gutter-sidebar":"0.75rem","space-2xl":"4rem","margin-window":"0.75rem","margin":"2rem","space-xl":"2.5rem","space-2xs":"0.125rem","space-sm":"0.5rem","space-xs":"0.25rem","space-lg":"1.5rem"},fontFamily:{"label-ui-sm":["Inter"],"caption-marginalia":["Noto Serif"],"headline-lg":["Noto Serif"],"body-prose-lg":["Noto Serif"],"body-prose":["Noto Serif"],"display":["Noto Serif"],"headline-md":["Noto Serif"],"label-ui":["Inter"],"title-editorial":["Noto Serif"],"headline-sm":["Noto Serif"],"body-prose-sm":["Noto Serif"]},fontSize:{"label-ui-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"caption-marginalia":["12px",{"lineHeight":"18px","letterSpacing":"0.01em","fontWeight":"400"}],"headline-lg":["28px",{"lineHeight":"38px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-prose-lg":["18px",{"lineHeight":"34px","letterSpacing":"0.01em","fontWeight":"400"}],"body-prose":["16px",{"lineHeight":"30px","letterSpacing":"0.005em","fontWeight":"400"}],"display":["38px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-md":["22px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"500"}],"label-ui":["13px",{"lineHeight":"18px","letterSpacing":"-0.005em","fontWeight":"450"}],"title-editorial":["16px",{"lineHeight":"24px","fontWeight":"500"}],"headline-sm":["18px",{"lineHeight":"26px","fontWeight":"500"}],"body-prose-sm":["14px",{"lineHeight":"24px","fontWeight":"400"}]}}}};</script></head><body class="bg-background font-body-prose text-on-surface antialiased select-none"><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container-low/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(43,42,40,0.04)] z-50 flex items-center justify-between px-margin-window select-none"><div class="flex items-center gap-space-sm"><div class="flex items-center gap-1.5 pl-space-xs pr-space-sm"><span class="w-3 h-3 rounded-full bg-[#FF5F56] inline-block shadow-inner"></span><span class="w-3 h-3 rounded-full bg-[#FFBD2E] inline-block shadow-inner"></span><span class="w-3 h-3 rounded-full bg-[#27C93F] inline-block shadow-inner"></span></div><div class="flex items-center gap-space-xs"><img alt="Paper Isle Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WgqI6FzYPlLiiQxCqKLyup8xtse2v6O_9hvUa5pDSzxzquNxzwop_J0_ppuNB2oBGIJYbwhKVL9j_Mk747-8DK8OU_w5uH_DXJe5HIdvYJi6-MK_wEaMpW5aeuzLjyRmdMgIRGu0KAighers1uHmfgHpAZNUod1G02D9GwAp8o62ozNshXaNSzhQrzePhKwszkbNk_dsXkN_NwwtNlhpem8qljqRz1gtwFY1qkp4VujCtqszMOWrfG0ag"/><span class="font-title-editorial text-title-editorial text-on-surface tracking-tight ml-space-2xs">纸屿 · Paper Isle</span></div><span class="font-caption-marginalia text-caption-marginalia text-outline px-space-xs">/</span><span class="font-title-editorial text-title-editorial text-primary tracking-normal">《南山纪事 · 卷三》 浮生随笔</span></div><div class="hidden xl:flex items-center gap-space-sm"><div class="flex items-center bg-surface-container px-space-xs py-space-2xs rounded-lg shadow-inner"><button class="px-space-sm py-space-2xs font-label-ui text-label-ui text-on-surface rounded hover:bg-surface-container-high transition-colors" type="button">写作模式</button><button class="px-space-sm py-space-2xs font-label-ui text-label-ui text-on-surface-variant hover:text-on-surface rounded hover:bg-surface-container-high transition-colors" type="button">专注模式</button><button class="px-space-sm py-space-2xs font-label-ui text-label-ui text-on-surface-variant hover:text-on-surface rounded hover:bg-surface-container-high transition-colors" type="button">禅道分屏</button></div><button class="flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container-high/60 rounded-lg hover:bg-surface-container-highest transition-colors font-label-ui text-label-ui text-on-surface-variant" type="button"><span class="material-symbols-outlined text-[16px]">search</span><span>⌘K 灵感指令</span></button></div><div class="flex items-center gap-space-sm"><div class="hidden md:flex items-center gap-space-xs text-on-surface-variant font-caption-marginalia text-caption-marginalia bg-surface-container/60 px-space-sm py-space-2xs rounded-full"><span class="w-1.5 h-1.5 rounded-full bg-secondary inline-block"></span><span>已同步至 iCloud 与 本地磁盘 · 10秒前</span></div><button class="flex items-center gap-space-2xs px-space-xs py-space-2xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" title="8套文艺皮肤切换" type="button"><span class="material-symbols-outlined text-[18px]">palette</span><span class="font-label-ui-sm text-label-ui-sm hidden lg:inline">皮肤</span></button><button class="flex items-center gap-space-2xs px-space-xs py-space-2xs rounded-lg text-secondary hover:bg-secondary-container hover:text-on-secondary-container transition-colors" title="AI 伴读与灵感润色" type="button"><span class="material-symbols-outlined text-[18px]">auto_awesome</span><span class="font-label-ui-sm text-label-ui-sm hidden lg:inline">伴读</span></button><div class="flex items-center pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB20tTJiC4psikM-MXagOJMgx1xS2vZLsndI7KfbmEq9Nk5yjbTUBe6esJ8SS8pFyYCPNRDRio56maMPysmFF3DESGkp7-JS_a13KLd6bBESBrPS8XIkAnNZP9T8-OTVdSgDfSI574LWHM-5_QDxN0zmqVxK4QPfzlGU5GL3JtpoMSBtMaohCHr0Gh8IKoDHFSrqUrL89ksCaI3E1rl5JL7S1WIpzMmjX3VmtqI6CL8Cdezh7Sjy4HF"/></div></div></header><aside class="fixed left-0 top-16 bottom-10 w-64 bg-surface-container-low/75 backdrop-blur-xl z-40 flex flex-col justify-between py-space-md shadow-[1px_0_12px_rgba(43,42,40,0.02)]"><div class="flex flex-col gap-space-md px-gutter-sidebar"><div class="flex items-center justify-between px-space-sm"><span class="font-caption-marginalia text-caption-marginalia uppercase tracking-wider text-outline">文斋目录 · Binder</span><span class="material-symbols-outlined text-[16px] text-outline cursor-pointer hover:text-on-surface">tune</span></div><nav class="flex flex-col gap-space-2xs" data-active-classes="bg-primary-container text-on-primary font-medium shadow-sm"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="main-writing-studio" href="#"><span class="material-symbols-outlined text-[18px]">edit_note</span><span class="font-title-editorial text-title-editorial">书斋写作</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="ai-companion-review" href="#"><span class="material-symbols-outlined text-[18px]">auto_awesome</span><span class="font-title-editorial text-title-editorial">AI 灵感润色</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="knowledge-lore-research" href="#"><span class="material-symbols-outlined text-[18px]">style</span><span class="font-title-editorial text-title-editorial">资料卡片与图谱</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg transition-all bg-primary-container text-on-primary font-medium shadow-sm" data-path="literary-templates-workshop" href="#"><span class="material-symbols-outlined text-[18px]">auto_stories</span><span class="font-title-editorial text-title-editorial">文体模板工坊</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="one-click-publish-hub" href="#"><span class="material-symbols-outlined text-[18px]">send_time_extension</span><span class="font-title-editorial text-title-editorial">全网一键发布</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="studio-preferences-themes" href="#"><span class="material-symbols-outlined text-[18px]">settings</span><span class="font-title-editorial text-title-editorial">文房偏好设置</span></a></nav></div><div class="px-gutter-sidebar"><div class="bg-surface-container px-space-sm py-space-sm rounded-xl"><div class="flex items-center justify-between font-label-ui-sm text-label-ui-sm text-on-surface-variant mb-space-2xs"><span>今日笔耕</span><span>82%</span></div><div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden"><div class="h-full bg-primary rounded-full" style="width: 82%"></div></div><div class="mt-space-2xs font-caption-marginalia text-caption-marginalia text-outline flex items-center justify-between"><span>已完成 2,855 字</span><span>目标 3,500</span></div></div></div></aside><div class="pl-64"><main class="relative pt-16 pb-10 min-h-screen w-full bg-background"><div class="flex flex-col w-full">
+<div class="px-8 py-8 max-w-[1440px] mx-auto w-full">
+<!-- Top Action / Context Header -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-8">
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[14px]">auto_stories</span>
+</span>
+<span class="font-caption-marginalia text-caption-marginalia text-outline tracking-widest uppercase">
+             Atelier Typographique · 典籍版型工坊
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+          文体工坊 <span class="font-title-editorial text-title-editorial text-outline font-normal ml-2">/ 为不同体裁定制专属书房与版刻规制</span>
+</h1>
+<p class="font-body-prose-sm text-body-prose-sm text-on-surface-variant max-w-2xl">
+          每一种文学体裁，皆有其呼吸的节律。纸屿根据历代典籍版式与现代屏读美学，提供预置行气、界格、批注轨与辅助工具链，让灵感归位于最妥帖的纸页。
+        </p>
+</div>
+<!-- Quick Action & Stats pill -->
+<div class="flex items-center gap-3 self-start lg:self-end">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant font-label-ui-sm text-label-ui-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span>已载入 28 款活字典籍规制</span>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-container text-on-primary hover:opacity-90 transition-all font-label-ui text-label-ui shadow-sm" id="quick-custom-btn">
+<span class="material-symbols-outlined text-[16px]">draw</span>
+<span>新建私家规制</span>
+</button>
+</div>
+</div>
+<!-- Category Filter Bar (Tabs with subtle tactile indicators) -->
+<div class="flex items-center justify-between pb-6 flex-wrap gap-4">
+<div class="inline-flex p-1 bg-surface-container rounded-xl shadow-inner gap-1">
+<button class="filter-tab active px-4 py-1.5 rounded-lg font-label-ui text-label-ui bg-surface-container-lowest text-on-surface shadow-sm transition-all" data-category="all">
+          全部 <span class="ml-1 text-outline font-normal">28</span>
+</button>
+<button class="filter-tab px-4 py-1.5 rounded-lg font-label-ui text-label-ui text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-category="prose">
+          散文与游记 <span class="ml-1 text-outline font-normal">8</span>
+</button>
+<button class="filter-tab px-4 py-1.5 rounded-lg font-label-ui text-label-ui text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-category="poetry">
+          古典与现代诗歌 <span class="ml-1 text-outline font-normal">6</span>
+</button>
+<button class="filter-tab px-4 py-1.5 rounded-lg font-label-ui text-label-ui text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-category="novel">
+          长中短篇小说 <span class="ml-1 text-outline font-normal">9</span>
+</button>
+<button class="filter-tab px-4 py-1.5 rounded-lg font-label-ui text-label-ui text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-category="history">
+          历史传记与考据 <span class="ml-1 text-outline font-normal">5</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-caption-marginalia text-caption-marginalia text-outline">排列：</span>
+<button class="px-2.5 py-1 text-on-surface font-label-ui-sm text-label-ui-sm rounded bg-surface-container-high">按雅致度</button>
+<button class="px-2.5 py-1 text-on-surface-variant font-label-ui-sm text-label-ui-sm rounded hover:bg-surface-container">按使用频次</button>
+</div>
+</div>
+<!-- Featured Master Grid: Bound Manuscript Book Covers -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="template-grid">
+<!-- Card 1: 江南水墨游记 (散文类 · 热门) -->
+<div class="group template-card prose-cat flex flex-col bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden" data-genre="prose">
+<!-- Book Cover Top Stage -->
+<div class="relative h-64 w-full bg-[#f4f1ea] p-6 flex items-center justify-between overflow-hidden">
+<!-- Subtle Ink Wash Background Visual -->
+<div class="absolute inset-0 opacity-40 bg-cover bg-center pointer-events-none" data-alt="Subtle soft grey Chinese traditional ink wash landscape painting with misty mountains, tranquil water, and minimalist negative space reminiscent of Song dynasty aesthetics." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBsmoyKtOiOc-qKAsPR3ohVTJK-5LCyyOZUpeE2Oe3Sab4c8c_sAM6sZCIEHnhHYQkPHaEB39EevnZlTm-LpJMHK_6eawld6vUg3s9aRgLJuhg6Bul9fCB4ytIZq26kt4fILB4BYrcnMHN36zbIMsYWAQL_ELskvSpCQCCc8YKEdLGAsPSLfKaFuuqPZwn4TXoVhv7_am7ldcQWxLqRGFLTFcAo4SAgdQNzGE0h0nYnpSocF3yWuFZ_')"></div>
+<!-- Vermilion Bookmark Tag -->
+<div class="absolute top-0 right-8 z-10">
+<div class="w-7 h-16 bg-primary text-on-primary font-caption-marginalia text-[10px] flex flex-col items-center justify-center shadow-md rounded-b-sm [writing-mode:vertical-rl] tracking-widest pt-1">
+              典籍精选
+            </div>
+</div>
+<!-- Traditional Vertical Title Slip (书名籤条) -->
+<div class="relative z-10 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-6 shadow-md rounded-sm flex flex-col items-center ml-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mb-2"></span>
+<span class="font-title-editorial text-title-editorial text-on-surface [writing-mode:vertical-rl] tracking-[0.25em] font-medium">
+              江南水墨游记
+            </span>
+<span class="font-caption-marginalia text-[10px] text-outline mt-3 [writing-mode:vertical-rl]">
+              宣纸·行楷
+            </span>
+</div>
+<!-- Book Cover Meta/Aesthetic Crest -->
+<div class="relative z-10 flex flex-col items-end justify-between h-full text-right">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-ui-sm text-label-ui-sm">
+              散文与游记 · 热门
+            </span>
+<div class="space-y-1">
+<div class="font-caption-marginalia text-caption-marginalia text-outline">版幅宽 680px</div>
+<div class="font-caption-marginalia text-caption-marginalia text-on-surface-variant font-medium">节气物候批注条</div>
+</div>
+</div>
+</div>
+<!-- Typography & Layout Blueprint Details -->
+<div class="p-6 flex flex-col justify-between flex-1 gap-6">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-title-editorial text-title-editorial text-on-surface font-semibold">排版规制与器具</span>
+<span class="font-label-ui-sm text-label-ui-sm text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 适意长文
+              </span>
+</div>
+<!-- Trait Chips -->
+<div class="grid grid-cols-2 gap-2 text-on-surface-variant font-caption-marginalia text-caption-marginalia">
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">format_align_left</span>
+<span>段首自然缩进两字</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">image</span>
+<span>图文穿插小品布局</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">notes</span>
+<span>二十四节气随笔记</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">local_florist</span>
+<span>行距 1.85x 舒朗留白</span>
+</div>
+</div>
+<!-- Preview Quote Snippet -->
+<div class="p-3.5 rounded-xl bg-surface-container-low text-on-surface-variant font-body-prose-sm text-body-prose-sm italic line-clamp-2">
+              「是日微雨，湖面凝脂如未裁之绢。泊舟于绿漪深处，听雨滴荷叶如敲棋子…」
+            </div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 pt-2">
+<button class="flex-1 py-2.5 rounded-xl bg-primary-container text-on-primary font-label-ui text-label-ui hover:bg-primary transition-all flex items-center justify-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">ink_pen</span>
+<span>立即开卷使用</span>
+</button>
+<button class="px-3.5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-ui text-label-ui transition-all flex items-center justify-center" title="预览样章">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2: 极简现代诗 / 格律诗 (诗歌类) -->
+<div class="group template-card poetry-cat flex flex-col bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden" data-genre="poetry">
+<!-- Book Cover Top Stage -->
+<div class="relative h-64 w-full bg-[#1e2229] p-6 flex items-center justify-between overflow-hidden">
+<!-- Abstract poetic lines overlay -->
+<div class="absolute inset-0 opacity-20 bg-cover bg-center pointer-events-none" data-alt="Minimalist deep indigo and ivory parchment paper with fine geometric gold foil lines and zen negative space photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC9tby4yeJuo98AMSQXVvjKTiKcy_XFxsw6qHz4jv3_L3rP_GpzlxkMzH63RhOLVG5XF7iAo8LQaRlVYBdSkgabAHVbSovOj2e8jHBtKoEa_g-l6IfDov-cIVpyJ4kFbtNANBBTtW8ziCvOFuxy9CxLsMjtMJsxCl2_S1pYAKr1z8TmhjIwta9CeLp9XcbxiwiDpzbBOCiXPt_03TblF0I35fu5gSNb0TgcHSCD18zBzMp-fS6tRP5T')"></div>
+<!-- Golden thread accent -->
+<div class="absolute inset-y-0 left-12 w-[1px] bg-tertiary-fixed/30 pointer-events-none"></div>
+<!-- Vertical Slim Slip -->
+<div class="relative z-10 bg-surface-container-lowest/10 backdrop-blur-md px-3.5 py-7 rounded-sm flex flex-col items-center ml-8 text-on-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed mb-2"></span>
+<span class="font-title-editorial text-title-editorial text-surface [writing-mode:vertical-rl] tracking-[0.3em] font-light">
+              凝露 · 极简诗草
+            </span>
+<span class="font-caption-marginalia text-[10px] text-tertiary-fixed/80 mt-3 [writing-mode:vertical-rl]">
+              声律 · 呼吸
+            </span>
+</div>
+<!-- Book Cover Meta -->
+<div class="relative z-10 flex flex-col items-end justify-between h-full text-right text-surface-container">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/20 backdrop-blur-md text-surface font-label-ui-sm text-label-ui-sm">
+              古典与现代诗歌
+            </span>
+<div class="space-y-1">
+<div class="font-caption-marginalia text-caption-marginalia text-surface/60">行距 2.2x 广袤</div>
+<div class="font-caption-marginalia text-caption-marginalia text-tertiary-fixed font-medium">平仄声韵声律器</div>
+</div>
+</div>
+</div>
+<!-- Details -->
+<div class="p-6 flex flex-col justify-between flex-1 gap-6">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-title-editorial text-title-editorial text-on-surface font-semibold">排版规制与器具</span>
+<span class="font-label-ui-sm text-label-ui-sm text-tertiary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> 意象留白
+              </span>
+</div>
+<!-- Trait Chips -->
+<div class="grid grid-cols-2 gap-2 text-on-surface-variant font-caption-marginalia text-caption-marginalia">
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">format_align_center</span>
+<span>天光与地脚大留白</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">graphic_eq</span>
+<span>平仄检测与押韵律动</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">air</span>
+<span>断句音律呼吸引导</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">tune</span>
+<span>可切换直排诗简</span>
+</div>
+</div>
+<!-- Preview Quote Snippet -->
+<div class="p-3.5 rounded-xl bg-surface-container-low text-on-surface-variant font-body-prose-sm text-body-prose-sm text-center italic">
+              「在词语尚未凝结之前 / 冰封的群山已越过屋脊」
+            </div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 pt-2">
+<button class="flex-1 py-2.5 rounded-xl bg-primary-container text-on-primary font-label-ui text-label-ui hover:bg-primary transition-all flex items-center justify-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">ink_pen</span>
+<span>立即开卷使用</span>
+</button>
+<button class="px-3.5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-ui text-label-ui transition-all flex items-center justify-center" title="预览样章">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3: 多线叙事小说工程 (小说类) -->
+<div class="group template-card novel-cat flex flex-col bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden" data-genre="novel">
+<!-- Book Cover Top Stage -->
+<div class="relative h-64 w-full bg-[#3e2321] p-6 flex items-center justify-between overflow-hidden">
+<!-- Leather / Hardbound weave texture -->
+<div class="absolute inset-0 opacity-30 bg-cover bg-center pointer-events-none" data-alt="Dark maroon vintage leather-bound book texture with subtle embossed classical gilding patterns and tactile bookbinding details." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC69oPcYe0pqPrwu5D05_AQHo5_89M3KfID7D2b-wXlwU3MKNvucKBYfuFWYM6CuB5RzdjUUSfTU7LFhhJjLTL3SGI6YUs5ip6SWGN-Tor8CUopwebUVGLRDhfqmu90zZcBuejad6fnkynRVqpgcKJ2XaWCvBjB1IQrw2ggkJFguw_pG-5vcNJrm6Qe0gcMNfq5KV0jpCjMLdW6mx-e4Fok0DkhYRIe9BQGEkV2NTGCBrZVyvnQOa3A')"></div>
+<!-- Embossed Gilded Crest -->
+<div class="relative z-10 bg-primary/40 backdrop-blur-md px-3.5 py-6 rounded shadow-lg flex flex-col items-center ml-2 border border-primary-fixed/20">
+<span class="material-symbols-outlined text-primary-fixed text-[18px] mb-1">menu_book</span>
+<span class="font-title-editorial text-title-editorial text-primary-fixed [writing-mode:vertical-rl] tracking-[0.25em] font-medium">
+              九重渊 · 长卷叙事
+            </span>
+<span class="font-caption-marginalia text-[10px] text-primary-fixed/70 mt-2 [writing-mode:vertical-rl]">
+              宏篇小说
+            </span>
+</div>
+<!-- Cover Meta -->
+<div class="relative z-10 flex flex-col items-end justify-between h-full text-right text-primary-fixed">
+<span class="px-2 py-0.5 rounded-full bg-primary/60 text-primary-fixed font-label-ui-sm text-label-ui-sm">
+              长中短篇小说
+            </span>
+<div class="space-y-1">
+<div class="font-caption-marginalia text-caption-marginalia text-primary-fixed/70">节拍表 (Beat Sheet)</div>
+<div class="font-caption-marginalia text-caption-marginalia text-primary-fixed font-medium">伏笔回收标记抽屉</div>
+</div>
+</div>
+</div>
+<!-- Details -->
+<div class="p-6 flex flex-col justify-between flex-1 gap-6">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-title-editorial text-title-editorial text-on-surface font-semibold">排版规制与器具</span>
+<span class="font-label-ui-sm text-label-ui-sm text-primary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> 架构驱动
+              </span>
+</div>
+<!-- Trait Chips -->
+<div class="grid grid-cols-2 gap-2 text-on-surface-variant font-caption-marginalia text-caption-marginalia">
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">badge</span>
+<span>人物小传与关系网</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">timeline</span>
+<span>多线大纲时序节拍</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">inventory_2</span>
+<span>未解伏笔追踪匣</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">visibility_off</span>
+<span>POV 视角切换提示器</span>
+</div>
+</div>
+<!-- Preview Quote Snippet -->
+<div class="p-3.5 rounded-xl bg-surface-container-low text-on-surface-variant font-body-prose-sm text-body-prose-sm italic line-clamp-2">
+              「第七夜子时，城门的铁锁被无声卸下。他握着信物，方知十年前留下的铜匙竟是对准此扇门。」
+            </div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 pt-2">
+<button class="flex-1 py-2.5 rounded-xl bg-primary-container text-on-primary font-label-ui text-label-ui hover:bg-primary transition-all flex items-center justify-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">ink_pen</span>
+<span>立即开卷使用</span>
+</button>
+<button class="px-3.5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-ui text-label-ui transition-all flex items-center justify-center" title="预览样章">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4: 史海钩沉考据录 (历史类) -->
+<div class="group template-card history-cat flex flex-col bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden" data-genre="history">
+<!-- Book Cover Top Stage (仿宋版线装古籍版框) -->
+<div class="relative h-64 w-full bg-[#f2ede4] p-6 flex items-center justify-between overflow-hidden">
+<!-- Fine book frame texture / 朱丝栏格纹 -->
+<div class="absolute inset-4 rounded border-2 border-primary/20 pointer-events-none flex flex-col justify-between p-2">
+<div class="flex justify-between items-center text-[10px] text-primary/40 font-caption-marginalia">
+<span>纸屿文斋监制</span>
+<span>卷次备查</span>
+</div>
+<div class="flex justify-between items-center text-[10px] text-primary/40 font-caption-marginalia">
+<span>天历庚子</span>
+<span>仿宋刊刻</span>
+</div>
+</div>
+<!-- Traditional Red Box Slip -->
+<div class="relative z-10 bg-surface-container-lowest px-3 py-6 shadow-md rounded flex flex-col items-center ml-4 border-l-2 border-primary">
+<span class="font-title-editorial text-title-editorial text-on-surface [writing-mode:vertical-rl] tracking-[0.25em] font-medium">
+              史海钩沉录
+            </span>
+<span class="font-caption-marginalia text-[10px] text-primary mt-2 [writing-mode:vertical-rl]">
+              朱丝栏·双行小注
+            </span>
+</div>
+<!-- Cover Meta -->
+<div class="relative z-10 flex flex-col items-end justify-between h-full text-right">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-ui-sm text-label-ui-sm">
+              历史传记与考据
+            </span>
+<div class="space-y-1">
+<div class="font-caption-marginalia text-caption-marginalia text-outline">干支/公元换算</div>
+<div class="font-caption-marginalia text-caption-marginalia text-on-surface-variant font-medium">双栏史料并排考定</div>
+</div>
+</div>
+</div>
+<!-- Details -->
+<div class="p-6 flex flex-col justify-between flex-1 gap-6">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-title-editorial text-title-editorial text-on-surface font-semibold">排版规制与器具</span>
+<span class="font-label-ui-sm text-label-ui-sm text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 严谨考订
+              </span>
+</div>
+<!-- Trait Chips -->
+<div class="grid grid-cols-2 gap-2 text-on-surface-variant font-caption-marginalia text-caption-marginalia">
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">view_column</span>
+<span>原文与按语双栏并置</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">calendar_month</span>
+<span>纪年换算 (干支/年号/公元)</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">format_quote</span>
+<span>芝加哥/国标引用模版</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">fact_check</span>
+<span>孤证预警与旁证引索</span>
+</div>
+</div>
+<!-- Preview Quote Snippet -->
+<div class="p-3.5 rounded-xl bg-surface-container-low text-on-surface-variant font-body-prose-sm text-body-prose-sm italic line-clamp-2">
+              「按《元史·地理志》，该驿道立于至元十五年冬，而近世出土残碑载『天历初建』，二者相差达半世纪…」
+            </div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 pt-2">
+<button class="flex-1 py-2.5 rounded-xl bg-primary-container text-on-primary font-label-ui text-label-ui hover:bg-primary transition-all flex items-center justify-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">ink_pen</span>
+<span>立即开卷使用</span>
+</button>
+<button class="px-3.5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-ui text-label-ui transition-all flex items-center justify-center" title="预览样章">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 5: 书评札记与读书录 (评论类) -->
+<div class="group template-card prose-cat flex flex-col bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden" data-genre="prose">
+<!-- Book Cover Top Stage (琥珀暖色皮面，金属书签绳细节) -->
+<div class="relative h-64 w-full bg-[#3d2e1e] p-6 flex items-center justify-between overflow-hidden">
+<!-- Warm Amber Leather Texture -->
+<div class="absolute inset-0 opacity-40 bg-cover bg-center pointer-events-none" data-alt="Warm amber and tan calfskin book cover texture with subtle book ribbon bookmark and exquisite golden debossed stamping." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAyktQ_e3BJ759Y04ds5Z2uUUXBF1f7FzOGJsxfkfyzE4JfbXK88GHYCVIVYe-rHihznj5kf9VNV537d0ZGtoXK-Sfnedjq77PICvYtZNAobvdZGmlbuknGWQog3oxeJaKltpBM-hPhYw9JY7sjLXYJrHKrf3SMDABK5l5TslwLmYWvTsnPdHMSwsK4xR9yb5TmqyYzTdvni2oEd5KiyHyLfRlA-z5cD0XeyDIIG6XesAQODi6GRCfv')"></div>
+<!-- Hanging Golden Ribbon Detail -->
+<div class="absolute top-0 right-16 w-3 h-24 bg-gradient-to-b from-tertiary-fixed via-tertiary to-tertiary-container shadow-md rounded-b-full"></div>
+<!-- Slip -->
+<div class="relative z-10 bg-surface-container-lowest/90 backdrop-blur-md px-3.5 py-6 shadow-md rounded flex flex-col items-center ml-2">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container mb-2"></span>
+<span class="font-title-editorial text-title-editorial text-on-surface [writing-mode:vertical-rl] tracking-[0.25em] font-medium">
+              书肆冷香札记
+            </span>
+<span class="font-caption-marginalia text-[10px] text-outline mt-3 [writing-mode:vertical-rl]">
+              读书会·辨章
+            </span>
+</div>
+<!-- Cover Meta -->
+<div class="relative z-10 flex flex-col items-end justify-between h-full text-right text-surface-container">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container text-on-tertiary-container font-label-ui-sm text-label-ui-sm">
+              书评札记与阅读录
+            </span>
+<div class="space-y-1">
+<div class="font-caption-marginalia text-caption-marginalia text-surface/70">书籍元数据卡片</div>
+<div class="font-caption-marginalia text-caption-marginalia text-tertiary-fixed font-medium">双栏摘录金句对照</div>
+</div>
+</div>
+</div>
+<!-- Details -->
+<div class="p-6 flex flex-col justify-between flex-1 gap-6">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-title-editorial text-title-editorial text-on-surface font-semibold">排版规制与器具</span>
+<span class="font-label-ui-sm text-label-ui-sm text-tertiary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> 批注辨析
+              </span>
+</div>
+<!-- Trait Chips -->
+<div class="grid grid-cols-2 gap-2 text-on-surface-variant font-caption-marginalia text-caption-marginalia">
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">menu_book</span>
+<span>ISBN 与书目自动抓取</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">splitscreen</span>
+<span>原文摘录与我思对照轨</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">hotel_class</span>
+<span>五维心证量化评估卡</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">share</span>
+<span>一键导出排印金句卡</span>
+</div>
+</div>
+<!-- Preview Quote Snippet -->
+<div class="p-3.5 rounded-xl bg-surface-container-low text-on-surface-variant font-body-prose-sm text-body-prose-sm italic line-clamp-2">
+              「读到第三章时，忽觉作者笔锋转入荒寒。书名虽为谈艺，底色实则是对流变时光的庄严挽留。」
+            </div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 pt-2">
+<button class="flex-1 py-2.5 rounded-xl bg-primary-container text-on-primary font-label-ui text-label-ui hover:bg-primary transition-all flex items-center justify-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">ink_pen</span>
+<span>立即开卷使用</span>
+</button>
+<button class="px-3.5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-ui text-label-ui transition-all flex items-center justify-center" title="预览样章">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 6: 私房志怪笔记 (新入库备选) -->
+<div class="group template-card novel-cat flex flex-col bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden" data-genre="novel">
+<!-- Book Cover Top Stage -->
+<div class="relative h-64 w-full bg-[#273834] p-6 flex items-center justify-between overflow-hidden">
+<!-- Deep Celadon ink wash texture -->
+<div class="absolute inset-0 opacity-30 bg-cover bg-center pointer-events-none" data-alt="Dark jade and celadon green traditional Chinese textured paper with subtle ancient mystical water ripples and quiet midnight atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDsxEk0UryR3IeM-F1stmcVzqJyUTfguWNv0QhC9rRF3P1GWH45PJiR4UbZxKJAn0jCRXJhwdgZ-WJYASSRU2mslBpq2HKRQCLGtkivfa0KxlGS8FbX45mkvCzA6jd1nhGYpeMxVA9jHNvR7J_RHLV7mPkAaRCOc-9qY9vecrwDisuHV1JvhvnXLKJrjJp_iZ1zbteMhi5V7UqdjFCEYYoGy3I_n7WIuAfCF9hizIpGY6QVgwnt8kvX')"></div>
+<!-- Slip -->
+<div class="relative z-10 bg-surface-container-lowest px-3 py-6 shadow-md rounded flex flex-col items-center ml-2 border-r-2 border-secondary">
+<span class="font-title-editorial text-title-editorial text-on-surface [writing-mode:vertical-rl] tracking-[0.25em] font-medium">
+              夜航奇谭札
+            </span>
+<span class="font-caption-marginalia text-[10px] text-secondary mt-2 [writing-mode:vertical-rl]">
+              搜奇·短制
+            </span>
+</div>
+<!-- Cover Meta -->
+<div class="relative z-10 flex flex-col items-end justify-between h-full text-right text-secondary-fixed">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-ui-sm text-label-ui-sm">
+              志怪与寓言笔记
+            </span>
+<div class="space-y-1">
+<div class="font-caption-marginalia text-caption-marginalia text-secondary-fixed/70">短篇章节联咏</div>
+<div class="font-caption-marginalia text-caption-marginalia text-secondary-fixed font-medium">奇谈风物志图卡</div>
+</div>
+</div>
+</div>
+<!-- Details -->
+<div class="p-6 flex flex-col justify-between flex-1 gap-6">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-title-editorial text-title-editorial text-on-surface font-semibold">排版规制与器具</span>
+<span class="font-label-ui-sm text-label-ui-sm text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 奇趣随笔
+              </span>
+</div>
+<!-- Trait Chips -->
+<div class="grid grid-cols-2 gap-2 text-on-surface-variant font-caption-marginalia text-caption-marginalia">
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">history_edu</span>
+<span>笔记体短篇目录树</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">category</span>
+<span>妖怪与灵物图谱标签</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">psychology</span>
+<span>AI 意象联想激发器</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">dark_mode</span>
+<span>夜航静心纸色自适应</span>
+</div>
+</div>
+<!-- Preview Quote Snippet -->
+<div class="p-3.5 rounded-xl bg-surface-container-low text-on-surface-variant font-body-prose-sm text-body-prose-sm italic line-clamp-2">
+              「青溪桥下旧有白黿，每当月晦风止，常化作老翁登岸求茶，所饮皆以松叶为酬…」
+            </div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 pt-2">
+<button class="flex-1 py-2.5 rounded-xl bg-primary-container text-on-primary font-label-ui text-label-ui hover:bg-primary transition-all flex items-center justify-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">ink_pen</span>
+<span>立即开卷使用</span>
+</button>
+<button class="px-3.5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-ui text-label-ui transition-all flex items-center justify-center" title="预览样章">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Bespoke Customizer & Rule Builder Section -->
+<div class="mt-12 bg-surface-container-lowest rounded-2xl p-8 shadow-sm">
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 pb-6">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">architecture</span>
+<span class="font-title-editorial text-title-editorial text-on-surface font-semibold">从现有模板衍生私有文体规则</span>
+</div>
+<p class="font-body-prose-sm text-body-prose-sm text-on-surface-variant">
+            您可任意混搭「行气宽裕度」、「边注轨逻辑」、「字体级差」与专属快捷指令，固化为作者个性化的排版协议。
+          </p>
+</div>
+<button class="px-5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-ui text-label-ui transition-all flex items-center gap-2 shrink-0" id="save-rule-btn">
+<span class="material-symbols-outlined text-[16px] text-secondary">bookmark_add</span>
+<span>固化为新模板预设</span>
+</button>
+</div>
+<!-- Quick Interactive Parameters Matrix -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 pt-4">
+<!-- Param 1 -->
+<div class="p-4 rounded-xl bg-surface-container-low space-y-2">
+<div class="flex items-center justify-between font-label-ui text-label-ui text-on-surface">
+<span>版心宽度 (Canvas Width)</span>
+<span class="text-primary font-medium" id="width-indicator">680 px</span>
+</div>
+<input class="w-full accent-primary cursor-pointer" id="width-range" max="840" min="540" step="10" type="range" value="680"/>
+<div class="flex justify-between font-caption-marginalia text-caption-marginalia text-outline">
+<span>540px (紧致)</span>
+<span>840px (宽泛)</span>
+</div>
+</div>
+<!-- Param 2 -->
+<div class="p-4 rounded-xl bg-surface-container-low space-y-2">
+<div class="flex items-center justify-between font-label-ui text-label-ui text-on-surface">
+<span>行气倍率 (Line Height)</span>
+<span class="text-primary font-medium" id="line-indicator">1.85 ×</span>
+</div>
+<input class="w-full accent-primary cursor-pointer" id="line-range" max="2.4" min="1.4" step="0.05" type="range" value="1.85"/>
+<div class="flex justify-between font-caption-marginalia text-caption-marginalia text-outline">
+<span>1.4x (紧凑)</span>
+<span>2.4x (诗歌留白)</span>
+</div>
+</div>
+<!-- Param 3 -->
+<div class="p-4 rounded-xl bg-surface-container-low space-y-2">
+<div class="flex items-center justify-between font-label-ui text-label-ui text-on-surface">
+<span>正文字体 (Calligraphic Tone)</span>
+</div>
+<select class="w-full bg-surface-container-lowest text-on-surface font-label-ui text-label-ui p-2 rounded-lg outline-none">
+<option>思源宋体 (Noto Serif · 文人素雅)</option>
+<option>方正仿宋 (Classical Academic · 严整考订)</option>
+<option>霞鹜文楷 (Kaiti Warmth · 手帖随笔)</option>
+<option>屏显明体 (Clean Minimalist · 现代长篇)</option>
+</select>
+<div class="font-caption-marginalia text-caption-marginalia text-outline">
+            已挂载本地字体回落协议
+          </div>
+</div>
+<!-- Param 4 -->
+<div class="p-4 rounded-xl bg-surface-container-low space-y-2">
+<div class="flex items-center justify-between font-label-ui text-label-ui text-on-surface">
+<span>侧翼伴读轨 (Sidebar Rail)</span>
+</div>
+<select class="w-full bg-surface-container-lowest text-on-surface font-label-ui text-label-ui p-2 rounded-lg outline-none">
+<option>朱丝小注与辞海释义</option>
+<option>故事时序与伏笔回收</option>
+<option>古典平仄与四声检测</option>
+<option>极简禅意 (完全收隐)</option>
+</select>
+<div class="font-caption-marginalia text-caption-marginalia text-outline">
+            联动右侧伴读栏与⌘K
+          </div>
+</div>
+</div>
+</div>
+<!-- Chapter Sample Preview Modal Drawer (Mocked interactive) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm hidden items-center justify-center p-6" id="preview-modal">
+<div class="bg-surface-container-lowest max-w-2xl w-full rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[870px]">
+<div class="flex items-center justify-between px-6 py-4 bg-surface-container">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary inline-block"></span>
+<span class="font-title-editorial text-title-editorial text-on-surface" id="modal-title">版型排印样章试阅</span>
+</div>
+<button class="p-1 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container-high transition-colors" id="close-modal-btn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-8 overflow-y-auto space-y-6">
+<div class="text-center pb-4 border-b border-surface-container-highest">
+<h2 class="font-headline-md text-headline-md text-on-surface">《越中览古与湖上记事》</h2>
+<p class="font-caption-marginalia text-caption-marginalia text-outline mt-1">南山小隐 · 庚子初春试版</p>
+</div>
+<div class="font-body-prose-lg text-body-prose-lg text-on-surface space-y-4 text-justify" id="modal-prose" style="line-height: 1.85;">
+<p class="indent-8">
+              水面清平如镜，扁舟过断桥，听两岸茶烟袅袅。昔人谓江左文华，非止于辞藻，亦在其烟水空明之态。执笔于斯，字句自敛锋芒，如印水之月。
+            </p>
+<p class="indent-8">
+              临窗开卷，案头宣纸隐透天光。此版式之设，取宋代蜀刻本之朗阔，段落不急，行间能容游思。偶有落叶拂砚，即成一段眉注。
+            </p>
+</div>
+<!-- Marginalia Note Mockup -->
+<div class="p-4 rounded-xl bg-surface-container-low text-on-surface-variant font-caption-marginalia text-caption-marginalia flex items-start gap-3">
+<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">auto_awesome</span>
+<div>
+<span class="font-medium text-secondary">伴读随考：</span>此处化用高启《寻胡隐君》语意，排版建议为词末添加折线小注，字距微扩0.02em以助缓读。
+            </div>
+</div>
+</div>
+<div class="flex items-center justify-between px-6 py-4 bg-surface-container-low">
+<span class="font-caption-marginalia text-caption-marginalia text-outline">纸屿字样预览器 · 680px版心基准</span>
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 rounded-xl bg-primary-container text-on-primary font-label-ui text-label-ui hover:bg-primary transition-all" id="modal-apply-btn">
+              装入我的文斋
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+    (function initLiteraryWorkshop() {
+      // Category Tab Filtering
+      const tabs = document.querySelectorAll('.filter-tab');
+      const cards = document.querySelectorAll('.template-card');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => {
+            t.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm', 'active');
+            t.classList.add('text-on-surface-variant');
+          });
+          tab.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm', 'active');
+          tab.classList.remove('text-on-surface-variant');
+
+          const category = tab.getAttribute('data-category');
+          cards.forEach(card => {
+            if (category === 'all' || card.getAttribute('data-genre') === category) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Quick Parameter Sliders
+      const widthRange = document.getElementById('width-range');
+      const widthInd = document.getElementById('width-indicator');
+      if (widthRange && widthInd) {
+        widthRange.addEventListener('input', (e) => {
+          widthInd.textContent = e.target.value + ' px';
+        });
+      }
+
+      const lineRange = document.getElementById('line-range');
+      const lineInd = document.getElementById('line-indicator');
+      if (lineRange && lineInd) {
+        lineRange.addEventListener('input', (e) => {
+          lineInd.textContent = Number(e.target.value).toFixed(2) + ' ×';
+        });
+      }
+
+      // Modal Interactive Preview
+      const modal = document.getElementById('preview-modal');
+      const closeModal = document.getElementById('close-modal-btn');
+      const previewButtons = document.querySelectorAll('[title="预览样章"]');
+
+      previewButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const card = btn.closest('.template-card');
+          const title = card ? card.querySelector('.font-title-editorial').textContent.trim() : '典籍规制试阅';
+          const modalTitle = document.getElementById('modal-title');
+          if (modalTitle) modalTitle.textContent = '样章试阅 · ' + title;
+          if (modal) {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+          }
+        });
+      });
+
+      if (closeModal && modal) {
+        closeModal.addEventListener('click', () => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        });
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+          }
+        });
+      }
+
+      const applyBtn = document.getElementById('modal-apply-btn');
+      if (applyBtn) {
+        applyBtn.addEventListener('click', () => {
+          applyBtn.textContent = '已装入当前书房 ✓';
+          setTimeout(() => {
+            if (modal) {
+              modal.classList.add('hidden');
+              modal.classList.remove('flex');
+            }
+            applyBtn.textContent = '装入我的文斋';
+          }, 800);
+        });
+      }
+
+      // Save custom rule toast trigger
+      const saveBtn = document.getElementById('save-rule-btn');
+      if (saveBtn) {
+        saveBtn.addEventListener('click', () => {
+          const original = saveBtn.innerHTML;
+          saveBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-secondary">check</span><span>私有规制已录入工坊</span>';
+          setTimeout(() => {
+            saveBtn.innerHTML = original;
+          }, 1800);
+        });
+      }
+    })();
+  </script>
+</div></main></div><footer class="fixed bottom-0 left-0 right-0 h-10 bg-surface-container-low/90 backdrop-blur-xl shadow-[0_-1px_6px_rgba(43,42,40,0.03)] z-50 flex items-center justify-between px-space-md font-label-ui-sm text-label-ui-sm text-on-surface-variant select-none"><div class="flex items-center gap-space-md"><span class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px] text-primary">ink_pen</span>实时字数: 3,482 字</span><span class="text-outline">|</span><span>预估阅读: 9 分钟</span><span class="text-outline">|</span><span class="flex items-center gap-space-2xs"><span class="w-2 h-2 rounded-full bg-secondary inline-block"></span>今日目标: 82% 环形进度</span></div><div class="hidden md:flex items-center gap-space-xs text-outline"><span class="material-symbols-outlined text-[14px]">format_size</span><span>字体: 思源宋体 18px / 行距 1.85 / 宣纸·微纹理</span></div><div class="flex items-center gap-space-md"><span>打字机模式 [开]</span><span class="text-outline">|</span><span>专注模式 (F11)</span><span class="text-outline">|</span><span class="text-secondary flex items-center gap-space-2xs"><span class="material-symbols-outlined text-[14px]">verified</span>自动保存良好</span></div></footer></body></html>

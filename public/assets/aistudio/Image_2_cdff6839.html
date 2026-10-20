@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Noto+Serif+SC:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;height:100%;overflow:hidden;}body{overscroll-behavior:none;background-color:#F5F0E6;color:#2B2A28;font-family:'Noto Serif SC',serif;}::-webkit-scrollbar{width:4px;height:4px;}::-webkit-scrollbar-thumb{background:rgba(138,113,110,0.2);border-radius:9999px;}::-webkit-scrollbar-track{background:transparent;}}/* 双行夹注经典文学版式 */.double-annotation{display:inline-flex;flex-direction:column;vertical-align:middle;font-size:0.58em;line-height:1.2;color:#664f19;background:#f7f3ef;padding:1px 4px;border-radius:3px;margin:0 2px;border-left:1.5px solid #a43b2f;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-container":"#81672f","primary":"#952f25","surface-container-lowest":"#ffffff","secondary":"#33675f","on-error":"#ffffff","on-primary-fixed-variant":"#84241a","surface-container-highest":"#e6e2de","surface-container":"#f1edea","inverse-surface":"#31302e","inverse-on-surface":"#f4f0ec","outline-variant":"#dec0bb","secondary-fixed-dim":"#9cd1c7","background":"#f5f0e6","on-error-container":"#93000a","surface-tint":"#a43b2f","on-secondary":"#ffffff","on-surface":"#2B2A28","surface-bright":"#fdf9f5","on-secondary-fixed":"#00201c","inverse-primary":"#ffb4a9","surface":"#fdf9f5","surface-container-low":"#f7f3ef","primary-fixed":"#ffdad5","on-surface-variant":"#57423f","on-primary":"#ffffff","on-primary-fixed":"#410001","on-tertiary-fixed-variant":"#5a430e","primary-container":"#b5473a","tertiary-fixed":"#ffdf9f","surface-container-high":"#ece7e4","tertiary":"#664f19","outline":"#8a716e","on-background":"#2B2A28","on-tertiary":"#ffffff","secondary-container":"#b4eae0","on-secondary-container":"#386b63","primary-fixed-dim":"#ffb4a9","error":"#ba1a1a","on-tertiary-container":"#ffeac5","surface-dim":"#ddd9d6","on-primary-container":"#ffe7e4","on-tertiary-fixed":"#261a00","surface-variant":"#e6e2de","secondary-fixed":"#b7ede3","tertiary-fixed-dim":"#e3c281","error-container":"#ffdad6","on-secondary-fixed-variant":"#184f48"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},fontFamily:{"body-prose":["'Noto Serif SC'","serif"],"display":["'Noto Serif SC'","serif"],"label-ui":["Inter","sans-serif"],"label-ui-sm":["Inter","sans-serif"]}}}};</script></head>
+<body class="bg-[#F5F0E6] text-[#2B2A28] antialiased select-none flex flex-col h-screen w-screen overflow-hidden">
+<!-- TOP HEADER (macOS 风格无缝顶栏) -->
+<header class="h-11 bg-[#EFE9DF]/85 backdrop-blur-xl border-b border-[#8A716E]/15 z-50 flex items-center justify-between px-3 select-none flex-shrink-0">
+<!-- 左侧：红黄绿与标题 -->
+<div class="flex items-center gap-2.5">
+<div class="flex items-center gap-1.5 pl-1 pr-2">
+<span class="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E] inline-block shadow-inner hover:brightness-95 cursor-pointer"></span>
+<span class="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123] inline-block shadow-inner hover:brightness-95 cursor-pointer"></span>
+<span class="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29] inline-block shadow-inner hover:brightness-95 cursor-pointer"></span>
+</div>
+<div class="h-4 w-px bg-[#8A716E]/20"></div>
+<div class="flex items-center gap-1.5 ml-1">
+<img alt="Paper Isle" class="h-5 w-5 object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WgqI6FzYPlLiiQxCqKLyup8xtse2v6O_9hvUa5pDSzxzquNxzwop_J0_ppuNB2oBGIJYbwhKVL9j_Mk747-8DK8OU_w5uH_DXJe5HIdvYJi6-MK_wEaMpW5aeuzLjyRmdMgIRGu0KAighers1uHmfgHpAZNUod1G02D9GwAp8o62ozNshXaNSzhQrzePhKwszkbNk_dsXkN_NwwtNlhpem8qljqRz1gtwFY1qkp4VujCtqszMOWrfG0ag"/>
+<span class="font-medium text-xs text-[#1C1B1A] tracking-normal">纸屿 · Paper Isle</span>
+</div>
+<span class="text-xs text-[#8A716E]/60 px-1">/</span>
+<span class="text-xs text-[#952F25] font-medium tracking-tight">《南山纪事 · 卷三》 浮生随笔</span>
+</div>
+<!-- 中间：专注与视线模式 -->
+<div class="hidden md:flex items-center gap-2 bg-[#E6E0D5]/70 p-0.5 rounded-md border border-[#8A716E]/10">
+<button class="px-2 py-0.5 text-xs text-[#1C1B1A] bg-[#FDF9F5] shadow-xs rounded font-medium" type="button">写作模式</button>
+<button class="px-2 py-0.5 text-xs text-[#57423F] hover:text-[#1C1B1A] rounded transition-colors" type="button">专注模式 (F11)</button>
+<button class="px-2 py-0.5 text-xs text-[#57423F] hover:text-[#1C1B1A] rounded transition-colors" type="button">禅道分屏</button>
+</div>
+<!-- 右侧：同步状态、皮肤、灵感指令与用户 -->
+<div class="flex items-center gap-2.5">
+<div class="hidden lg:flex items-center gap-1.5 text-[11px] text-[#57423F] bg-[#ECE5DA]/80 px-2 py-0.5 rounded-full border border-[#8A716E]/15">
+<span class="w-1.5 h-1.5 rounded-full bg-[#33675F] animate-pulse"></span>
+<span>已同步至 iCloud 与 本地磁盘 · 12秒前</span>
+</div>
+<button class="flex items-center gap-1 px-2 py-0.5 bg-[#E6E0D5]/80 hover:bg-[#DDD6CA] border border-[#8A716E]/20 rounded text-[11px] text-[#57423F] transition-colors" type="button">
+<span class="material-symbols-outlined text-[13px]">search</span>
+<span>⌘K 灵感指令</span>
+</button>
+<div class="flex items-center pl-1 border-l border-[#8A716E]/20">
+<img alt="User" class="w-6 h-6 rounded-full object-cover border border-[#8A716E]/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB20tTJiC4psikM-MXagOJMgx1xS2vZLsndI7KfbmEq9Nk5yjbTUBe6esJ8SS8pFyYCPNRDRio56maMPysmFF3DESGkp7-JS_a13KLd6bBESBrPS8XIkAnNZP9T8-OTVdSgDfSI574LWHM-5_QDxN0zmqVxK4QPfzlGU5GL3JtpoMSBtMaohCHr0Gh8IKoDHFSrqUrL89ksCaI3E1rl5JL7S1WIpzMmjX3VmtqI6CL8Cdezh7Sjy4HF"/>
+</div>
+</div>
+</header>
+<!-- MAIN BODY: THREE PANELS (左目录卷轴 + 中沉浸稿纸 + 右灵感侍书) -->
+<div class="flex flex-1 overflow-hidden relative">
+<!-- 1. 左栏目录卷轴 (270px, 毛玻璃宣纸浅灰底色, macOS 原生树状层级) -->
+<aside class="w-[270px] flex-shrink-0 bg-[#EFEAE2]/90 backdrop-blur-xl border-r border-[#8A716E]/15 flex flex-col justify-between select-none z-20">
+<!-- 顶部控制与搜索 -->
+<div class="p-3 flex flex-col gap-2.5">
+<!-- 朱砂红新建按钮 -->
+<button class="w-full flex items-center justify-center gap-1.5 bg-[#952F25] hover:bg-[#84241A] text-white py-1.5 px-3 rounded-lg text-xs font-medium shadow-sm transition-all active:scale-[0.99]" type="button">
+<span class="material-symbols-outlined text-[15px]">add_circle</span>
+<span>新建卷轴 / 篇章</span>
+</button>
+<!-- 检索全本文案 -->
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-2 text-[14px] text-[#8A716E]">search</span>
+<input class="w-full bg-[#E5DFD4] pl-6 pr-8 py-1 rounded-md text-xs text-[#1C1B1A] placeholder:text-[#8A716E] border border-transparent focus:border-[#8A716E]/30 focus:bg-[#FDF9F5] focus:outline-none transition-all" placeholder="搜索全本文案..." type="text"/>
+<span class="absolute right-2 text-[10px] text-[#8A716E] font-label-ui">⌘F</span>
+</div>
+<!-- 目录层级标头 -->
+<div class="flex items-center justify-between px-1 pt-1 text-[11px] text-[#8A716E] tracking-wider uppercase">
+<span>文库卷册与篇章</span>
+<span class="font-label-ui text-[10px]">3 部著作</span>
+</div>
+<!-- 卷册篇章树状导航 -->
+<div class="flex flex-col gap-1 overflow-y-auto max-h-[calc(100vh-270px)] pr-0.5">
+<!-- 展开状态著作：《南山纪事》 -->
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center justify-between px-1.5 py-1 rounded hover:bg-[#E3DCcf] cursor-pointer text-[#1C1B1A]">
+<div class="flex items-center gap-1 truncate font-medium text-xs">
+<span class="material-symbols-outlined text-[14px] text-[#952F25]">arrow_drop_down</span>
+<span class="material-symbols-outlined text-[15px] text-[#952F25]">folder_open</span>
+<span class="truncate">《南山纪事》</span>
+</div>
+<span class="text-[10px] text-[#8A716E] font-label-ui">6.8万字</span>
+</div>
+<!-- 章节列表 -->
+<div class="flex flex-col pl-4 gap-0.5 border-l border-[#8A716E]/20 ml-3 py-0.5">
+<!-- 序章 -->
+<div class="flex items-center justify-between px-1.5 py-1 rounded hover:bg-[#E3DCcf] cursor-pointer text-[#57423F] group transition-colors">
+<div class="flex items-center gap-1.5 truncate">
+<span class="w-1.5 h-1.5 rounded-full bg-[#33675F] flex-shrink-0"></span>
+<span class="text-xs truncate">序章：石阶与微雨</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="text-[10px] text-[#33675F] group-hover:hidden">完稿</span>
+<span class="text-[10px] text-[#8A716E] font-label-ui">2,410字</span>
+</div>
+</div>
+<!-- 卷一 -->
+<div class="flex items-center justify-between px-1.5 py-1 rounded hover:bg-[#E3DCcf] cursor-pointer text-[#57423F] group transition-colors">
+<div class="flex items-center gap-1.5 truncate">
+<span class="w-1.5 h-1.5 rounded-full bg-[#664F19] flex-shrink-0"></span>
+<span class="text-xs truncate">卷一：空山松子落</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="text-[10px] text-[#664F19] group-hover:hidden">修订中</span>
+<span class="text-[10px] text-[#8A716E] font-label-ui">3,120字</span>
+</div>
+</div>
+<!-- 卷二 -->
+<div class="flex items-center justify-between px-1.5 py-1 rounded hover:bg-[#E3DCcf] cursor-pointer text-[#57423F] group transition-colors">
+<div class="flex items-center gap-1.5 truncate">
+<span class="w-1.5 h-1.5 rounded-full bg-[#33675F] flex-shrink-0"></span>
+<span class="text-xs truncate">卷二：夜泊清溪</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="text-[10px] text-[#33675F] group-hover:hidden">完稿</span>
+<span class="text-[10px] text-[#8A716E] font-label-ui">4,050字</span>
+</div>
+</div>
+<!-- 卷三：浮生随笔 (当前选中高亮状态，带书卷墨迹指示器) -->
+<div class="relative flex items-center justify-between px-2 py-1.5 rounded-md bg-[#DFD7CB] text-[#1C1B1A] font-medium shadow-xs border border-[#8A716E]/20 cursor-pointer">
+<!-- 墨迹与指示微点 -->
+<div class="absolute -left-[17px] w-2 h-2 rounded-full bg-[#952F25] ring-2 ring-[#EFEAE2]"></div>
+<div class="flex items-center gap-1.5 truncate">
+<span class="material-symbols-outlined text-[14px] text-[#952F25]" style="font-variation-settings: 'FILL' 1;">edit_note</span>
+<span class="text-xs truncate font-semibold">卷三：浮生随笔</span>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0">
+<span class="text-[9px] px-1 py-0.2 rounded bg-[#664F19]/15 text-[#664F19] font-normal">草案</span>
+<span class="text-[10px] text-[#952F25] font-label-ui">3,482字</span>
+</div>
+</div>
+<!-- 卷四 -->
+<div class="flex items-center justify-between px-1.5 py-1 rounded hover:bg-[#E3DCcf] cursor-pointer text-[#57423F]/80 group transition-colors">
+<div class="flex items-center gap-1.5 truncate">
+<span class="w-1.5 h-1.5 rounded-full bg-[#8A716E]/40 flex-shrink-0"></span>
+<span class="text-xs truncate">卷四：远岫归云</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="text-[10px] text-[#8A716E]">构思</span>
+<span class="text-[10px] text-[#8A716E] font-label-ui">860字</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 收合卷册 2：《杂集诗抄》 -->
+<div class="flex items-center justify-between px-1.5 py-1 rounded hover:bg-[#E3DCcf] cursor-pointer text-[#57423F] mt-1 transition-colors">
+<div class="flex items-center gap-1 truncate text-xs">
+<span class="material-symbols-outlined text-[14px] text-[#8A716E]">arrow_right</span>
+<span class="material-symbols-outlined text-[15px] text-[#8A716E]">folder</span>
+<span class="truncate">《杂集诗抄》</span>
+</div>
+<span class="text-[10px] text-[#8A716E] font-label-ui">24首</span>
+</div>
+<!-- 收合卷册 3：《史话札记》 -->
+<div class="flex items-center justify-between px-1.5 py-1 rounded hover:bg-[#E3DCcf] cursor-pointer text-[#57423F] transition-colors">
+<div class="flex items-center gap-1 truncate text-xs">
+<span class="material-symbols-outlined text-[14px] text-[#8A716E]">arrow_right</span>
+<span class="material-symbols-outlined text-[15px] text-[#8A716E]">folder</span>
+<span class="truncate">《史话札记》</span>
+</div>
+<span class="text-[10px] text-[#8A716E] font-label-ui">12篇</span>
+</div>
+</div>
+</div>
+<!-- 底部独立放置：灵感便签箱与废纸篓 -->
+<div class="p-2.5 bg-[#E6E0D5]/80 border-t border-[#8A716E]/15 flex flex-col gap-1">
+<button class="flex items-center justify-between w-full px-2 py-1.5 rounded-md hover:bg-[#DFD7CB] text-[#57423F] hover:text-[#1C1B1A] transition-colors text-xs" type="button">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-[#664F19]">lightbulb</span>
+<span>灵感便签箱</span>
+</div>
+<span class="px-1.5 py-0.2 rounded-full bg-[#664F19]/15 text-[#664F19] text-[10px] font-medium font-label-ui">3条未归档</span>
+</button>
+<button class="flex items-center justify-between w-full px-2 py-1.5 rounded-md hover:bg-[#DFD7CB] text-[#8A716E] hover:text-[#1C1B1A] transition-colors text-xs" type="button">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">auto_delete</span>
+<span>废纸篓与历史稿</span>
+</div>
+<span class="text-[10px] text-[#8A716E] font-label-ui">8篇</span>
+</button>
+</div>
+</aside>
+<!-- 2. 中栏沉浸稿纸 (中间主体编辑区，居中排版，版心严格宽 680px) -->
+<main class="flex-1 overflow-y-auto bg-[#F5F0E6] flex flex-col items-center px-4 py-6 relative select-text">
+<!-- 顶部极简悬浮操作条 -->
+<div class="w-[680px] max-w-full flex items-center justify-between pb-3 mb-4 text-[#8A716E] border-b border-[#8A716E]/15 select-none">
+<div class="flex items-center gap-2 text-[11px]">
+<span class="w-2 h-2 rounded-full bg-[#33675F]"></span>
+<span>文渊阁 · 仿宣草纸基调 (#F6F1E7)</span>
+<span class="text-[#8A716E]/40">·</span>
+<span>最后键入：3分钟前</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1 px-2 py-1 rounded bg-[#EAE3D6] hover:bg-[#DFD7CB] text-[#57423F] text-[11px] font-label-ui transition-colors" title="打字机视线保持在屏幕黄金居中线" type="button">
+<span class="material-symbols-outlined text-[13px]">vertical_align_center</span>
+<span>打字机居中模式 [开]</span>
+</button>
+<button class="flex items-center gap-1 px-2 py-1 rounded bg-[#EAE3D6] hover:bg-[#DFD7CB] text-[#57423F] text-[11px] font-label-ui transition-colors" title="专注写作" type="button">
+<span class="material-symbols-outlined text-[13px]">fullscreen</span>
+<span>专注 (F11)</span>
+</button>
+<button class="p-1 rounded hover:bg-[#EAE3D6] text-[#57423F] transition-colors" title="墨滴纸色切换" type="button">
+<span class="material-symbols-outlined text-[15px]">palette</span>
+</button>
+<button class="p-1 rounded hover:bg-[#EAE3D6] text-[#57423F] transition-colors" title="禅道分屏阅读" type="button">
+<span class="material-symbols-outlined text-[15px]">vertical_split</span>
+</button>
+</div>
+</div>
+<!-- 浮动光标智能菜单 (Cursor Floating Action Menu - 紧贴当前段落上方展示黑金悬浮条) -->
+<div class="w-[680px] max-w-full mb-3 flex justify-end select-none">
+<div class="bg-[#2B2A28] text-[#FDF9F5] shadow-xl rounded-lg px-2.5 py-1.5 flex items-center gap-1.5 border border-[#8A716E]/30 animate-fade-in text-xs">
+<div class="flex items-center gap-1 pr-1.5 border-r border-[#8A716E]/40 text-[#E3C281] font-medium">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span>墨语润色</span>
+</div>
+<button class="px-1.5 py-0.5 rounded hover:bg-white/10 text-[11px] transition-colors flex items-center gap-0.5" type="button">
+<span>🪶 更古典</span>
+</button>
+<button class="px-1.5 py-0.5 rounded hover:bg-white/10 text-[11px] transition-colors flex items-center gap-0.5" type="button">
+<span>🍃 修饰意象</span>
+</button>
+<button class="px-1.5 py-0.5 rounded hover:bg-white/10 text-[11px] transition-colors flex items-center gap-0.5" type="button">
+<span>📜 查阅典故</span>
+</button>
+<div class="w-px h-3 bg-white/20 mx-0.5"></div>
+<button class="px-1 py-0.5 rounded hover:bg-white/10 text-[12px] font-bold" title="粗体" type="button">B</button>
+<button class="px-1 py-0.5 rounded hover:bg-white/10 text-[12px] italic" title="斜体" type="button">I</button>
+<button class="px-1 py-0.5 rounded hover:bg-white/10 text-[11px] text-[#E3C281]" title="双行夹注" type="button">夹注</button>
+</div>
+</div>
+<!-- 宣纸实体稿纸 (版心宽度严格 680px, 底色 #FDFBF7, 柔和墨色字 #2B2A28) -->
+<article class="w-[680px] max-w-full bg-[#FAF6EE] rounded-xl shadow-[0_4px_24px_rgba(43,42,40,0.06),0_1px_4px_rgba(43,42,40,0.04)] px-10 sm:px-14 py-12 flex flex-col relative border border-[#E6E0D5]">
+<!-- 朱砂古印「南山纸斋」落款 -->
+<div class="absolute right-10 top-10 pointer-events-none select-none">
+<div class="w-11 h-11 rounded border-2 border-[#952F25]/80 flex flex-col items-center justify-center text-[#952F25] font-display font-semibold rotate-2 p-0.5 leading-none shadow-[inset_0_0_6px_rgba(181,71,58,0.2)]">
+<span class="text-[10px] tracking-widest">南山</span>
+<span class="text-[10px] tracking-widest mt-0.5">纸斋</span>
+</div>
+</div>
+<!-- 题头元信息与标题 -->
+<header class="mb-8 flex flex-col gap-2 border-b border-[#8A716E]/15 pb-6">
+<div class="flex items-center gap-1.5 text-[#952F25] text-xs tracking-wider">
+<span class="material-symbols-outlined text-[13px]">bookmark</span>
+<span>《南山纪事》第三卷 · 散落篇章</span>
+</div>
+<h1 class="text-2xl sm:text-[26px] font-semibold text-[#1C1B1A] tracking-tight leading-snug">
+            浮生随笔：晴窗坐雨与纸上苍山
+          </h1>
+<div class="flex items-center flex-wrap gap-x-3 gap-y-1 text-[#8A716E] text-xs pt-1">
+<span>岁次壬寅秋月 · 坐雨烹茶记</span>
+<span>·</span>
+<span>总字数 3,482 字</span>
+<span>·</span>
+<span>预估研读 9 分钟</span>
+<span>·</span>
+<span class="text-[#33675F] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#33675F]"></span>
+              思源宋体 · 原墨排印
+            </span>
+</div>
+</header>
+<!-- 正文排版：段首缩进2字符，行高1.85，极富文学呼吸感 -->
+<div class="flex flex-col gap-5 text-[#2B2A28] text-[17px] leading-[1.85] selection:bg-[#B7EDE3] selection:text-[#00201C]">
+<p class="indent-[2em]">
+            秋分刚过，南山下的这间书舍便被浓稠的青黛色水汽裹挟了。午后无事，闲展素笺，廊外的老竹在细雨中簌簌作响，击在宋制青瓦上，发出轻重错落的脆响，如琴师初试拨片，迟疑而清亮。
+          </p>
+<p class="indent-[2em]">
+            案头的水盂里浮着昨夜随手采撷的一瓣晚桂，残香沉在清冽的井水里，散发出一股近乎古籍微潮的气味。我用端砚慢研松烟墨，墨香四溢之际，常觉窗外的烟云正沿着半开的格栅窗棂爬入纸上。所谓“落纸如云烟”，大抵非是夸饰，而是古人在空山寂室中，真切地借着墨汁的氤氲，化解了肉身的局限。
+          </p>
+<!-- 选中文句高亮状态（青碧宣纸流光高亮）+ 内联建议浮泡 -->
+<div class="relative group my-2 -mx-3 px-3 py-2 rounded-lg bg-[#EAE4D7]/60 border-l-2 border-[#33675F] transition-all">
+<p class="indent-[2em] text-[#1C1B1A]">
+              雨声忽而变得辽阔。庭院里的那株古棠已然褪尽繁华，只余苍黑的枯枝在雨丝织就的密网中沉静守候。
+              <span class="bg-[#9CD1C7]/45 px-1 py-0.5 rounded cursor-pointer text-[#1C1B1A] font-medium border-b border-[#33675F]">
+                山气自南峦漫卷而来，层层叠叠掩去了远峰的轮廓，天地之间，忽而只剩下了雨落青石的清响与笔尖摩挲纸背的微吟。
+              </span>
+              在此等寂寥里，人方能褪去平日奔波里的铠甲，于一滴水、一片墨色里照见原本的微茫与从容。
+            </p>
+<!-- 内联建议浮泡 -->
+<div class="mt-2.5 flex items-center justify-between text-xs text-[#33675F] bg-[#FAF6EE] px-2.5 py-1.5 rounded border border-[#33675F]/30 shadow-xs">
+<span class="flex items-center gap-1.5 font-medium">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+                已选中文句 · 墨语建议可强化空灵意象
+              </span>
+<div class="flex items-center gap-2">
+<span class="text-[11px] text-[#8A716E]">按 <kbd class="px-1 py-0.5 bg-[#E6E0D5] rounded text-[10px] text-[#1C1B1A] font-label-ui">Tab</kbd> 快捷采纳右侧方案</span>
+</div>
+</div>
+</div>
+<p class="indent-[2em]">
+            年岁渐长，愈发笃信文字是有体温与骨节的
+            <span class="double-annotation"><span>宋版书评</span><span>见骨肉停匀</span></span>。年轻时写景，唯恐辞藻不华丽，恨不得将世间所有的明艳色彩尽数倾注于一行短句；而今枯坐于秋雨窗前，反倒倾心于白石老人的留白——笔意未到之处，才是风月长存之所。一段山水，若被词句填塞得水泄不通，便失却了供观者吐纳的灵气。
+          </p>
+<p class="indent-[2em]">
+            几案上的这叠宣纸，产自泾县的深山竹涧，纸性绵韧如素帛，遇墨则深邃沉着。当笔尖落下的刹那，墨沈洇散，好似岁月悄然蚀刻在时间缝隙里的痕迹。人在此间敲击键盘，或以羊毫作跋，所求的不过是在瞬息万变的浮世洪流中，寻得片刻能与自我对谈的锚点。
+          </p>
+<!-- 光标输入动态模拟 -->
+<p class="indent-[2em] relative">
+            南山不语，唯雨霖铃。夜色自远处的枫林间慢慢合拢而来，我合上窗牖，将最后一点微光也留于这一方素纸之上
+            <span class="inline-block w-[2px] h-[1.2em] bg-[#952F25] align-middle animate-pulse ml-0.5"></span>
+</p>
+</div>
+<!-- 文末：朱丝栏双行小注与笺记批注展示 -->
+<div class="mt-12 pt-4 border-t border-[#8A716E]/20 flex items-start gap-2.5 text-xs text-[#8A716E] bg-[#F3EDE2]/60 p-3 rounded-lg border border-[#8A716E]/10">
+<span class="px-1.5 py-0.5 rounded bg-[#952F25]/10 text-[#952F25] font-label-ui-sm text-[11px] flex-shrink-0 font-medium">笺记 · 朱丝栏夹注</span>
+<p class="leading-relaxed text-[#57423F]">
+            此处“南山”指皖南齐云山脉余脉，昔年文人常隐于此以避喧嚣。文中提及之端砚，为宋坑老石，质密而润，能宿墨数日不干。宣纸取青檀皮与沙田稻草按古法九蒸四酿制成。
+          </p>
+</div>
+</article>
+<div class="h-10 w-full"></div>
+</main>
+<!-- 3. 右栏灵感侍书 (320px, AI 助手面板，双模切换，全套文学调校) -->
+<aside class="w-[320px] flex-shrink-0 bg-[#EFEAE2]/90 backdrop-blur-xl border-l border-[#8A716E]/15 flex flex-col justify-between select-none z-20">
+<div class="p-3 flex flex-col gap-3 overflow-y-auto">
+<!-- 助手标头与双模指示 -->
+<div class="flex items-center justify-between pb-2 border-b border-[#8A716E]/15">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-md bg-[#33675F] text-white flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[15px]">auto_awesome</span>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-semibold text-[#1C1B1A]">灵感侍书 · 墨语</span>
+<span class="text-[10px] text-[#33675F] flex items-center gap-1 font-label-ui">
+<span class="w-1.5 h-1.5 rounded-full bg-[#33675F]"></span>
+                双模切换 · 本地/云端极速就绪
+              </span>
+</div>
+</div>
+<button class="p-1 text-[#8A716E] hover:text-[#1C1B1A] rounded hover:bg-[#E3DCcf] transition-colors" title="侍书配置" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+</button>
+</div>
+<!-- 顶部快捷模式胶囊 -->
+<div class="flex flex-wrap gap-1">
+<button class="px-2 py-0.5 rounded bg-[#E5DFD4] text-[#57423F] hover:bg-[#33675F] hover:text-white text-[11px] font-label-ui transition-all flex items-center gap-0.5" type="button">
+<span>续写</span>
+</button>
+<button class="px-2 py-0.5 rounded bg-[#33675F] text-white text-[11px] font-label-ui font-medium shadow-xs flex items-center gap-0.5" type="button">
+<span>意境润色</span>
+</button>
+<button class="px-2 py-0.5 rounded bg-[#E5DFD4] text-[#57423F] hover:bg-[#33675F] hover:text-white text-[11px] font-label-ui transition-all" type="button">
+<span>扩充留白</span>
+</button>
+<button class="px-2 py-0.5 rounded bg-[#E5DFD4] text-[#57423F] hover:bg-[#33675F] hover:text-white text-[11px] font-label-ui transition-all" type="button">
+<span>化用典故</span>
+</button>
+<button class="px-2 py-0.5 rounded bg-[#E5DFD4] text-[#57423F] hover:bg-[#33675F] hover:text-white text-[11px] font-label-ui transition-all" type="button">
+<span>练字炼句</span>
+</button>
+</div>
+<!-- 润色方案卡片【秋雨造境 · 晚明小品风】 -->
+<div class="flex flex-col gap-2 bg-[#FAF6EE] p-3 rounded-xl border border-[#8A716E]/20 shadow-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-[#33675F] font-medium text-xs">
+<span class="material-symbols-outlined text-[14px]">auto_stories</span>
+<span>润色方案 · 晚明小品风</span>
+</div>
+<span class="px-1.5 py-0.2 rounded bg-[#33675F]/10 text-[#33675F] text-[10px] font-medium">推荐</span>
+</div>
+<div class="text-xs text-[#2B2A28] pl-2 border-l-2 border-[#33675F] leading-relaxed py-0.5 select-text bg-[#F3EDE2]/50 rounded-r">
+            “山岚如素绢漫卷南峦，天与青石俱冷。空阶滴沥，洗去千峰浮尘，只留得一室研墨人。”
+          </div>
+<p class="text-[11px] text-[#8A716E] leading-relaxed">
+            注：已融合苏轼《空山滴沥》之意向，弱化主观抒情，强化微雨古院的空灵声色。
+          </p>
+<div class="flex items-center gap-1.5 pt-1">
+<button class="flex-1 py-1 rounded bg-[#952F25] hover:bg-[#84241A] text-white text-[11px] font-medium transition-colors text-center shadow-xs" type="button">
+              替换当前文句
+            </button>
+<button class="px-2.5 py-1 rounded bg-[#E5DFD4] hover:bg-[#D8D0C3] text-[#1C1B1A] text-[11px] font-medium transition-colors" type="button">
+              采纳
+            </button>
+<button class="p-1 rounded bg-[#E5DFD4] hover:bg-[#D8D0C3] text-[#57423F] transition-colors" title="存入便签" type="button">
+<span class="material-symbols-outlined text-[14px]">bookmark_add</span>
+</button>
+</div>
+</div>
+<!-- 典故考据卡片【文心考据 · 泾县宣纸】 -->
+<div class="flex flex-col gap-1.5 bg-[#FAF6EE] p-3 rounded-xl border border-[#8A716E]/20 shadow-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-[#664F19] font-medium text-xs">
+<span class="material-symbols-outlined text-[14px]">menu_book</span>
+<span>文心考据 · 泾县宣纸</span>
+</div>
+<span class="text-[10px] text-[#8A716E]">典故</span>
+</div>
+<p class="text-xs text-[#57423F] leading-relaxed select-text">
+            泾县青檀皮制纸始于唐代，以纸寿千年著称。质地温润，遇墨显层。若描写触感，可用“肤理缜密，如玉如凝”。
+          </p>
+<button class="text-left text-[11px] text-[#664F19] hover:underline flex items-center gap-0.5 pt-0.5" type="button">
+<span>引人文末附注</span>
+<span class="material-symbols-outlined text-[12px]">arrow_forward</span>
+</button>
+</div>
+<!-- 侍书文风罗盘维度滑块 (75% / 85% / 65%) -->
+<div class="flex flex-col gap-2 pt-1 border-t border-[#8A716E]/15">
+<span class="text-[10px] text-[#8A716E] tracking-wider uppercase font-medium">侍书文风罗盘调校</span>
+<!-- 滑块 1：古典雅致 75% -->
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center justify-between text-[11px] text-[#57423F]">
+<span>古典雅致</span>
+<span class="text-[#952F25] font-label-ui font-medium">75%</span>
+<span class="text-[#8A716E]">现代表达</span>
+</div>
+<div class="w-full bg-[#E5DFD4] h-1.5 rounded-full overflow-hidden">
+<div class="bg-[#952F25] h-full rounded-full" style="width: 75%;"></div>
+</div>
+</div>
+<!-- 滑块 2：含蓄留白 85% -->
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center justify-between text-[11px] text-[#57423F]">
+<span>含蓄留白</span>
+<span class="text-[#33675F] font-label-ui font-medium">85%</span>
+<span class="text-[#8A716E]">直叙心意</span>
+</div>
+<div class="w-full bg-[#E5DFD4] h-1.5 rounded-full overflow-hidden">
+<div class="bg-[#33675F] h-full rounded-full" style="width: 85%;"></div>
+</div>
+</div>
+<!-- 滑块 3：简练疏淡 65% -->
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center justify-between text-[11px] text-[#57423F]">
+<span>简练疏淡</span>
+<span class="text-[#664F19] font-label-ui font-medium">65%</span>
+<span class="text-[#8A716E]">繁丽铺陈</span>
+</div>
+<div class="w-full bg-[#E5DFD4] h-1.5 rounded-full overflow-hidden">
+<div class="bg-[#664F19] h-full rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- 底部保留对话式灵感交互输入框 (⌘K 唤出墨语灵感指令) -->
+<div class="p-2.5 bg-[#E6E0D5]/80 border-t border-[#8A716E]/15 flex flex-col gap-1.5">
+<div class="bg-[#FAF6EE] rounded-lg border border-[#8A716E]/20 p-2 shadow-inner flex flex-col gap-1.5">
+<textarea class="w-full bg-transparent resize-none border-none focus:outline-none text-xs text-[#1C1B1A] placeholder:text-[#8A716E]/70 leading-normal" placeholder="向墨语输入写作指引，例如：以王维诗意润色..." rows="2"></textarea>
+<div class="flex items-center justify-between pt-0.5">
+<span class="text-[10px] text-[#8A716E] font-label-ui">⌘K 唤出灵感指令</span>
+<button class="px-2 py-0.5 bg-[#33675F] hover:bg-[#28524B] text-white rounded text-[11px] flex items-center gap-1 shadow-xs font-label-ui" type="button">
+<span>生成</span>
+<span class="material-symbols-outlined text-[11px]">send</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between text-[10px] text-[#8A716E] px-0.5">
+<span class="flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#33675F]"></span>
+            本地热启动
+          </span>
+<span>延迟 18ms</span>
+</div>
+</div>
+</aside>
+</div>
+<!-- 4. 底部状态栏 (全局固定底部栏，高 36px，细腻边框，完整规制指标) -->
+<footer class="h-9 bg-[#EFE9DF] border-t border-[#8A716E]/20 z-50 flex items-center justify-between px-4 text-[11px] text-[#57423F] font-label-ui select-none flex-shrink-0">
+<!-- 左侧：字数与预计阅读时长 -->
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1 text-[#1C1B1A]">
+<span class="material-symbols-outlined text-[13px] text-[#952F25]">ink_pen</span>
+        实时字数: 3,482 字
+      </span>
+<span class="text-[#8A716E]/40">|</span>
+<span>预估阅读: 9 分钟</span>
+</div>
+<!-- 中间：今日目标进度与字体纸张信息 -->
+<div class="hidden md:flex items-center gap-3">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#33675F] inline-block"></span>
+<span>今日目标: 82% 环形进度 · 已写 2,855 / 目标 3,500 字</span>
+</div>
+<span class="text-[#8A716E]/40">|</span>
+<span class="text-[#8A716E] flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">format_size</span>
+        思源宋体 18px / 行距 1.85 / 宣纸·微纹理
+      </span>
+</div>
+<!-- 右侧：打字机模式、专注模式与云同步状态 -->
+<div class="flex items-center gap-3">
+<span class="text-[#57423F]">打字机模式 [开]</span>
+<span class="text-[#8A716E]/40">|</span>
+<span class="text-[#57423F]">专注模式 (F11)</span>
+<span class="text-[#8A716E]/40">|</span>
+<div class="text-[#33675F] flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+<span>已自动保存至本地磁盘与 iCloud · 12秒前 · 端到端加密已同步</span>
+</div>
+</div>
+</footer>
+</body></html>

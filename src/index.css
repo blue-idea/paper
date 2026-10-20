@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #952f25;
+  --color-primary-container: #b5473a;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #ffe7e4;
+  --color-primary-fixed: #ffdad5;
+  --color-primary-fixed-dim: #ffb4a9;
+  --color-on-primary-fixed: #410001;
+  --color-on-primary-fixed-variant: #84241a;
+
+  --color-secondary: #33675f;
+  --color-secondary-container: #b4eae0;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #386b63;
+  --color-secondary-fixed: #b7ede3;
+  --color-secondary-fixed-dim: #9cd1c7;
+  --color-on-secondary-fixed: #00201c;
+  --color-on-secondary-fixed-variant: #184f48;
+
+  --color-tertiary: #664f19;
+  --color-tertiary-container: #81672f;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #ffeac5;
+  --color-tertiary-fixed: #ffdf9f;
+  --color-tertiary-fixed-dim: #e3c281;
+  --color-on-tertiary-fixed: #261a00;
+  --color-on-tertiary-fixed-variant: #5a430e;
+
+  --color-background: #fdf9f5;
+  --color-on-background: #1c1b1a;
+
+  --color-surface: #fdf9f5;
+  --color-surface-dim: #ddd9d6;
+  --color-surface-bright: #fdf9f5;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f7f3ef;
+  --color-surface-container: #f1edea;
+  --color-surface-container-high: #ece7e4;
+  --color-surface-container-highest: #e6e2de;
+  --color-on-surface: #1c1b1a;
+  --color-on-surface-variant: #57423f;
+  --color-inverse-surface: #31302e;
+  --color-inverse-on-surface: #f4f0ec;
+
+  --color-outline: #8a716e;
+  --color-outline-variant: #dec0bb;
+
+  --font-body-prose: 'Noto Serif SC', 'Noto Serif', serif;
+  --font-body-prose-lg: 'Noto Serif SC', 'Noto Serif', serif;
+  --font-body-prose-sm: 'Noto Serif SC', 'Noto Serif', serif;
+  --font-headline-lg: 'Noto Serif SC', 'Noto Serif', serif;
+  --font-headline-md: 'Noto Serif SC', 'Noto Serif', serif;
+  --font-headline-sm: 'Noto Serif SC', 'Noto Serif', serif;
+  --font-title-editorial: 'Noto Serif SC', 'Noto Serif', serif;
+  --font-caption-marginalia: 'Noto Serif SC', 'Noto Serif', serif;
+  --font-display: 'Noto Serif SC', 'Noto Serif', serif;
+  --font-label-ui: 'Inter', sans-serif;
+  --font-label-ui-sm: 'Inter', sans-serif;
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  body {
+    overscroll-behavior: none;
+    background-color: #F5F0E6;
+    color: #2B2A28;
+    font-family: 'Noto Serif SC', serif;
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(138, 113, 110, 0.25);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+/* 双行夹注经典文学版式 */
+.double-annotation {
+  display: inline-flex;
+  flex-direction: column;
+  vertical-align: middle;
+  font-size: 0.58em;
+  line-height: 1.2;
+  color: #664f19;
+  background: #f7f3ef;
+  padding: 1px 4px;
+  border-radius: 3px;
+  margin: 0 2px;
+  border-left: 1.5px solid #a43b2f;
+}
+
+/* Material symbol baseline alignment */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
